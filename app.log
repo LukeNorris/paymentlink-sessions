@@ -1,0 +1,827 @@
+2025-09-05 07:54:41,205 INFO: Initializing Adyen client
+2025-09-05 07:54:41,206 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 07:54:41,206 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 07:54:41,206 INFO: Client Key: test**** (masked)
+2025-09-05 07:54:41,206 INFO: HMAC Key: your**** (masked)
+2025-09-05 07:54:41,206 INFO: Initializing SQLite database
+2025-09-05 07:54:41,209 INFO: Database initialized successfully
+2025-09-05 07:54:41,210 INFO: Starting Flask application
+2025-09-05 07:54:41,218 WARNING:  * Debugger is active!
+2025-09-05 07:54:41,263 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 07:57:54,107 INFO: 127.0.0.1 - - [05/Sep/2025 07:57:54] "GET /admin HTTP/1.1" 200 -
+2025-09-05 07:58:08,983 INFO: Processing admin form submission
+2025-09-05 07:58:08,989 INFO: Creating payment record: ID=2af20383-1134-405c-ab3f-8a41c3498319, Amount=1300.0, Currency=PLN, Reference=test reference
+2025-09-05 07:58:08,991 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=2af20383-1134-405c-ab3f-8a41c3498319
+2025-09-05 07:58:08,991 INFO: 127.0.0.1 - - [05/Sep/2025 07:58:08] "POST /admin HTTP/1.1" 200 -
+2025-09-05 07:58:14,496 INFO: Accessing checkout page with paymentId=2af20383-1134-405c-ab3f-8a41c3498319
+2025-09-05 07:58:14,500 INFO: Payment details: ID=2af20383-1134-405c-ab3f-8a41c3498319, Amount=1300, Currency=PLN, Reference=test reference, Status=pending, Expires=2025-09-06 07:58:08.989045
+2025-09-05 07:58:14,500 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 1300,
+    "currency": "PLN"
+  },
+  "reference": "test reference_645e8542",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=2af20383-1134-405c-ab3f-8a41c3498319",
+  "countryCode": "US"
+}
+2025-09-05 07:58:14,500 ERROR: Error creating Adyen session: 'NoneType' object has no attribute 'sessions'
+Traceback (most recent call last):
+  File "/Users/luken/Desktop/paymentlink-sessions/app.py", line 148, in checkout_page
+    result = adyen.payments_api.sessions(request_data)
+AttributeError: 'NoneType' object has no attribute 'sessions'
+2025-09-05 07:58:14,503 INFO: 127.0.0.1 - - [05/Sep/2025 07:58:14] "[35m[1mGET /checkout?paymentId=2af20383-1134-405c-ab3f-8a41c3498319 HTTP/1.1[0m" 500 -
+2025-09-05 07:58:20,304 INFO: 127.0.0.1 - - [05/Sep/2025 07:58:20] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:00:54,651 INFO:  * Detected change in '/Users/luken/Desktop/paymentlink-sessions/app.py', reloading
+2025-09-05 08:00:55,023 INFO: Initializing Adyen client
+2025-09-05 08:00:55,024 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:00:55,024 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:00:55,024 INFO: Client Key: test**** (masked)
+2025-09-05 08:00:55,024 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:00:55,024 INFO: Initializing SQLite database
+2025-09-05 08:00:55,027 INFO: Database initialized successfully
+2025-09-05 08:00:55,028 INFO: Starting Flask application
+2025-09-05 08:00:55,035 WARNING:  * Debugger is active!
+2025-09-05 08:00:55,081 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:01:04,965 INFO: 127.0.0.1 - - [05/Sep/2025 08:01:04] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:01:05,076 INFO: 127.0.0.1 - - [05/Sep/2025 08:01:05] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:03:32,702 INFO:  * Detected change in '/Users/luken/Desktop/paymentlink-sessions/app.py', reloading
+2025-09-05 08:03:33,772 INFO: Initializing Adyen client
+2025-09-05 08:03:33,773 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:03:33,773 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:03:33,773 INFO: Client Key: test**** (masked)
+2025-09-05 08:03:33,773 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:03:33,773 INFO: Initializing SQLite database
+2025-09-05 08:03:33,776 INFO: Database initialized successfully
+2025-09-05 08:03:33,777 INFO: Starting Flask application
+2025-09-05 08:03:33,790 WARNING:  * Debugger is active!
+2025-09-05 08:03:33,840 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:03:38,703 INFO: Initializing Adyen client
+2025-09-05 08:03:38,703 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:03:38,703 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:03:38,703 INFO: Client Key: test**** (masked)
+2025-09-05 08:03:38,704 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:03:38,704 INFO: Initializing SQLite database
+2025-09-05 08:03:38,707 INFO: Database initialized successfully
+2025-09-05 08:03:38,708 INFO: Starting Flask application
+2025-09-05 08:04:13,730 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:04:13,731 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:04:13,732 INFO:  * Restarting with stat
+2025-09-05 08:04:14,113 INFO: Initializing Adyen client
+2025-09-05 08:04:14,114 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:04:14,114 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:04:14,114 INFO: Client Key: test**** (masked)
+2025-09-05 08:04:14,114 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:04:14,114 INFO: Initializing SQLite database
+2025-09-05 08:04:14,117 INFO: Database initialized successfully
+2025-09-05 08:04:14,118 INFO: Starting Flask application
+2025-09-05 08:04:14,125 WARNING:  * Debugger is active!
+2025-09-05 08:04:14,172 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:04:14,898 INFO: 127.0.0.1 - - [05/Sep/2025 08:04:14] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:04:14,912 INFO: 127.0.0.1 - - [05/Sep/2025 08:04:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:04:31,827 INFO: Processing admin form submission
+2025-09-05 08:04:31,829 INFO: Creating payment record: ID=014a2244-b8e3-426c-a2ba-c386c85fa8e5, Amount=5600.0, Currency=PLN, Reference=test reference
+2025-09-05 08:04:31,831 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=014a2244-b8e3-426c-a2ba-c386c85fa8e5
+2025-09-05 08:04:31,831 INFO: 127.0.0.1 - - [05/Sep/2025 08:04:31] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:04:31,841 INFO: 127.0.0.1 - - [05/Sep/2025 08:04:31] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:04:46,271 INFO: Accessing checkout page with paymentId=014a2244-b8e3-426c-a2ba-c386c85fa8e5
+2025-09-05 08:04:46,273 ERROR: Error in checkout page: not enough values to unpack (expected 7, got 6)
+Traceback (most recent call last):
+  File "/Users/luken/Desktop/paymentlink-sessions/app.py", line 125, in checkout_page
+    id, amount, country, currency, reference, status, expires_at_str = payment
+ValueError: not enough values to unpack (expected 7, got 6)
+2025-09-05 08:04:46,275 INFO: 127.0.0.1 - - [05/Sep/2025 08:04:46] "[35m[1mGET /checkout?paymentId=014a2244-b8e3-426c-a2ba-c386c85fa8e5 HTTP/1.1[0m" 500 -
+2025-09-05 08:04:53,240 INFO: 127.0.0.1 - - [05/Sep/2025 08:04:53] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:05:49,212 INFO:  * Detected change in '/Users/luken/Desktop/paymentlink-sessions/app.py', reloading
+2025-09-05 08:05:49,243 INFO:  * Restarting with stat
+2025-09-05 08:05:49,548 INFO: Initializing Adyen client
+2025-09-05 08:05:49,549 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:05:49,549 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:05:49,549 INFO: Client Key: test**** (masked)
+2025-09-05 08:05:49,549 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:05:49,549 INFO: Initializing SQLite database
+2025-09-05 08:05:49,551 INFO: Database initialized successfully
+2025-09-05 08:05:49,552 INFO: Starting Flask application
+2025-09-05 08:05:49,560 WARNING:  * Debugger is active!
+2025-09-05 08:05:49,606 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:05:56,232 INFO: 127.0.0.1 - - [05/Sep/2025 08:05:56] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:05:56,245 INFO: 127.0.0.1 - - [05/Sep/2025 08:05:56] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:07:05,870 INFO: Initializing Adyen client
+2025-09-05 08:07:05,871 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:07:05,871 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:07:05,871 INFO: Client Key: test**** (masked)
+2025-09-05 08:07:05,871 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:07:05,871 INFO: Initializing SQLite database
+2025-09-05 08:07:05,874 INFO: Database initialized successfully
+2025-09-05 08:07:05,875 INFO: Starting Flask application
+2025-09-05 08:07:40,891 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:07:40,892 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:07:40,897 INFO:  * Restarting with stat
+2025-09-05 08:07:41,222 INFO: Initializing Adyen client
+2025-09-05 08:07:41,223 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:07:41,223 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:07:41,223 INFO: Client Key: test**** (masked)
+2025-09-05 08:07:41,223 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:07:41,223 INFO: Initializing SQLite database
+2025-09-05 08:07:41,225 INFO: Database initialized successfully
+2025-09-05 08:07:41,227 INFO: Starting Flask application
+2025-09-05 08:07:41,233 WARNING:  * Debugger is active!
+2025-09-05 08:07:41,283 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:08:01,317 INFO: 127.0.0.1 - - [05/Sep/2025 08:08:01] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:08:01,425 INFO: 127.0.0.1 - - [05/Sep/2025 08:08:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:08:05,774 INFO: Processing admin form submission
+2025-09-05 08:08:05,777 INFO: Creating payment record: ID=41000154-411b-447c-84c6-fb51f3c0d38e, Amount=7600.0, Currency=USD, Reference=test-123
+2025-09-05 08:08:05,780 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=41000154-411b-447c-84c6-fb51f3c0d38e
+2025-09-05 08:08:05,781 INFO: 127.0.0.1 - - [05/Sep/2025 08:08:05] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:08:05,791 INFO: 127.0.0.1 - - [05/Sep/2025 08:08:05] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:08:13,478 INFO: Accessing checkout page with paymentId=41000154-411b-447c-84c6-fb51f3c0d38e
+2025-09-05 08:08:13,481 ERROR: Error in checkout page: not enough values to unpack (expected 7, got 6)
+Traceback (most recent call last):
+  File "/Users/luken/Desktop/paymentlink-sessions/app.py", line 126, in checkout_page
+    id, amount, country, currency, reference, status, expires_at_str = payment
+ValueError: not enough values to unpack (expected 7, got 6)
+2025-09-05 08:08:13,482 INFO: 127.0.0.1 - - [05/Sep/2025 08:08:13] "[35m[1mGET /checkout?paymentId=41000154-411b-447c-84c6-fb51f3c0d38e HTTP/1.1[0m" 500 -
+2025-09-05 08:08:18,225 INFO: 127.0.0.1 - - [05/Sep/2025 08:08:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:27:51,789 INFO:  * Detected change in '/Users/luken/Desktop/paymentlink-sessions/app.py', reloading
+2025-09-05 08:27:51,817 INFO:  * Restarting with stat
+2025-09-05 08:27:52,167 INFO: Initializing Adyen client
+2025-09-05 08:27:52,168 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:27:52,168 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:27:52,168 INFO: Client Key: test**** (masked)
+2025-09-05 08:27:52,168 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:27:52,168 INFO: Initializing SQLite database
+2025-09-05 08:27:52,171 INFO: Database initialized successfully
+2025-09-05 08:27:52,172 INFO: Starting Flask application
+2025-09-05 08:27:52,179 WARNING:  * Debugger is active!
+2025-09-05 08:27:52,239 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:27:57,304 INFO:  * Detected change in '/Users/luken/Desktop/paymentlink-sessions/app.py', reloading
+2025-09-05 08:27:57,329 INFO:  * Restarting with stat
+2025-09-05 08:27:57,635 INFO: Initializing Adyen client
+2025-09-05 08:27:57,635 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:27:57,635 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:27:57,636 INFO: Client Key: test**** (masked)
+2025-09-05 08:27:57,636 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:27:57,636 INFO: Initializing SQLite database
+2025-09-05 08:27:57,638 INFO: Database initialized successfully
+2025-09-05 08:27:57,639 INFO: Starting Flask application
+2025-09-05 08:27:57,646 WARNING:  * Debugger is active!
+2025-09-05 08:27:57,691 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:28:04,655 INFO: 127.0.0.1 - - [05/Sep/2025 08:28:04] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:28:06,270 INFO: Processing admin form submission
+2025-09-05 08:28:06,276 INFO: Creating payment record: ID=55bfc392-7bbd-4716-9bd3-d4a8f37f0cb7, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:28:06,277 ERROR: Error in admin form: table payments has no column named country
+Traceback (most recent call last):
+  File "/Users/luken/Desktop/paymentlink-sessions/app.py", line 89, in admin_form
+    ''', (payment_id, int(price), currency, reference, 'pending', country, expires_at))
+sqlite3.OperationalError: table payments has no column named country
+2025-09-05 08:28:06,277 INFO: 127.0.0.1 - - [05/Sep/2025 08:28:06] "[35m[1mPOST /admin HTTP/1.1[0m" 500 -
+2025-09-05 08:28:52,935 INFO: Initializing Adyen client
+2025-09-05 08:28:52,936 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:28:52,936 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:28:52,936 INFO: Client Key: test**** (masked)
+2025-09-05 08:28:52,936 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:28:52,936 INFO: Initializing SQLite database
+2025-09-05 08:28:52,945 INFO: Database initialized successfully
+2025-09-05 08:28:52,947 INFO: Starting Flask application
+2025-09-05 08:29:27,964 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:29:27,965 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:29:27,968 INFO:  * Restarting with stat
+2025-09-05 08:29:28,274 INFO: Initializing Adyen client
+2025-09-05 08:29:28,275 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:29:28,275 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:29:28,275 INFO: Client Key: test**** (masked)
+2025-09-05 08:29:28,275 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:29:28,275 INFO: Initializing SQLite database
+2025-09-05 08:29:28,278 INFO: Database initialized successfully
+2025-09-05 08:29:28,279 INFO: Starting Flask application
+2025-09-05 08:29:28,286 WARNING:  * Debugger is active!
+2025-09-05 08:29:28,335 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:32:10,190 INFO: 127.0.0.1 - - [05/Sep/2025 08:32:10] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:32:12,311 INFO: Processing admin form submission
+2025-09-05 08:32:12,312 INFO: Creating payment record: ID=99f5a1f5-23d7-4886-9d47-f6b1580fc214, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:32:12,315 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214
+2025-09-05 08:32:12,315 INFO: 127.0.0.1 - - [05/Sep/2025 08:32:12] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:32:16,938 INFO: Accessing checkout page with paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214
+2025-09-05 08:32:16,941 INFO: Payment details: ID=99f5a1f5-23d7-4886-9d47-f6b1580fc214, Amount=7600, Currency=USD, Reference=test-123, Country=PL, Status=pending, Expires=2025-09-06 08:32:12.312642
+2025-09-05 08:32:16,942 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "USD"
+  },
+  "reference": "test-123_2de93fdc",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214",
+  "countryCode": "PL"
+}
+2025-09-05 08:32:17,459 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "USD",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:32:17+02:00",
+  "id": "CS7BBC729AB32B32F8199E2BA",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-123_2de93fdc",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgC0fQ10C+GnWbQcLl8qsr5o3NQrtjoxhXbSKjDiAhv715vzaZceuNcVfHgJFSNUgtWfGqmJ2vP2655oJbiDX2OLTkrjWu9d/cUPJciabjKelrb9gFRE3WZhOcOW8GIVbic42Evs0bZBroZNZy9vkwcJRp4uKXGUkRZsVpsmIrqGbb+U6yinSjE6kk+zoTIMPIX+8fuLZONfJ2wWHz+YyKpymSFkc50Y73Dm/tZf+snz2WReD4uAKcH1pDYCO/RWUROGNLw3hTxUdEdpEYkzGtKsrc/a+kYDU3/DDYqWNe1mslRC5ZdK2h1HszHzNGKNGAvRraxpdldAQeJsDqty/psnj2z915Prk4CmfWhCpxnEhwXKohRT2dekK3WIxQiVVxYXNF2cze9wZ8JNYH7X0qooLLzelSdjXXu3ouYJJ2X0kJj9y0SO17KjMHx9E5oq58aAEt43huEQ4sQt5OERV7HwvbMlI3vQkE4lUS3EG26MjAu7eBJ8cNvrRa2JLHGIXsbf4S/CQHlCNqdJHafJeIwvtaFlr+iedw+yRj2tzFLn+8mbwhGsjkGXktkkDpy7sM0nU7h+CTA04MNTN/eZhIU4hPKhNQwPyZQv/wCP670d7crZPjKLOxdEPPZxOTt5uHIm9EqQQTUVJKRfn8Mb3VwnTCNzEZKZIIRnpacWr7Qlbgw9D85NAS3C5cl7Y9MASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9nPdl03XoZUPwsWle2ycwKqliSTsqiWnL1ukHboM5SspSMqKoSstkPU8W5nvZoDgThGhmsMH0bNIsu/z+DC/QNRZvucjRapfCgz+qCuFor6irIYTlfeJyiJrhJmcjTjkLEp6GKKiCCOVRWpan6TIBQjv2d7xeSjZGm1GDZTj5eAEi0eLSFcxXS+4FJod9pN7XHkfI8M6d1F3FjTl7AhMCRRRFu32jUVSsstAW3eHOGohCrQqCUTwz5ywwvaTPBqdisxo5aPLAkah+BqsLLDxAE/pef1VLN6L4GGZjlTsuIwEkHwB8/0yhvrpCUrKxeGu8QQvtw1w3xGrPTWv7vW4RifLVTdNXtsFTa8I9t20UmDLmKn9B2CeW2QJNJi52gmjWnyNNvWNdfgPERbxMti+o6/ceqJ9Ju0HcqdFgtfjsWtjfib3DCk76YLw4+N5wwQCfJCIu7x5TlKG/Gwdwsy/jWXrrIdxBtIBedIGRGyArv56QOcL/SXBNSPfuxlTdd6fPx73jvVAaV7w7jvlHxNeNZd3FiW7FJZ9VW6dGahpvuTJ75zCP35LrOpHjU+THHVEuRkRYqVrRfVKsua7HmF67zXNU8XcjGG0kb/HPUqeCPX2vuD34NIRu2PibUlpOFen5vnkeiG1D7a6SpW6KS7DOfY4d4+5wjL7M4XeJtGKEOdf80d/vQRxFH3iYJfcMDBYl0EWSQQ=="
+}
+2025-09-05 08:32:17,459 INFO: Session created: session_id=CS7BBC729AB32B32F8199E2BA
+2025-09-05 08:32:17,461 INFO: 127.0.0.1 - - [05/Sep/2025 08:32:17] "GET /checkout?paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214 HTTP/1.1" 200 -
+2025-09-05 08:32:21,839 INFO: 127.0.0.1 - - [05/Sep/2025 08:32:21] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:33:16,032 INFO: Initializing Adyen client
+2025-09-05 08:33:16,033 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:33:16,033 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:33:16,033 INFO: Client Key: test**** (masked)
+2025-09-05 08:33:16,033 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:33:16,033 INFO: Initializing SQLite database
+2025-09-05 08:33:16,036 INFO: Database initialized successfully
+2025-09-05 08:33:16,037 INFO: Starting Flask application
+2025-09-05 08:33:51,057 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:33:51,058 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:33:51,061 INFO:  * Restarting with stat
+2025-09-05 08:33:51,364 INFO: Initializing Adyen client
+2025-09-05 08:33:51,365 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:33:51,365 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:33:51,365 INFO: Client Key: test**** (masked)
+2025-09-05 08:33:51,365 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:33:51,365 INFO: Initializing SQLite database
+2025-09-05 08:33:51,368 INFO: Database initialized successfully
+2025-09-05 08:33:51,369 INFO: Starting Flask application
+2025-09-05 08:33:51,376 WARNING:  * Debugger is active!
+2025-09-05 08:33:51,421 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:33:54,015 INFO: 127.0.0.1 - - [05/Sep/2025 08:33:54] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:33:54,030 INFO: 127.0.0.1 - - [05/Sep/2025 08:33:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:35:41,681 INFO: Processing admin form submission
+2025-09-05 08:35:41,683 INFO: Creating payment record: ID=0d8bbc5d-3637-4156-9a51-faa737e5e6c0, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:35:41,684 ERROR: Reference test-123 already exists
+2025-09-05 08:35:41,685 INFO: 127.0.0.1 - - [05/Sep/2025 08:35:41] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-05 08:35:41,902 INFO: 127.0.0.1 - - [05/Sep/2025 08:35:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:35:55,024 INFO: 127.0.0.1 - - [05/Sep/2025 08:35:55] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:35:55,036 INFO: 127.0.0.1 - - [05/Sep/2025 08:35:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:35:59,832 INFO: Processing admin form submission
+2025-09-05 08:35:59,834 INFO: Creating payment record: ID=7f4ceba3-3f29-49dd-b5cb-2f6be079728b, Amount=7600.0, Currency=USD, Reference=test-122, Country=PL
+2025-09-05 08:35:59,836 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=7f4ceba3-3f29-49dd-b5cb-2f6be079728b
+2025-09-05 08:35:59,836 INFO: 127.0.0.1 - - [05/Sep/2025 08:35:59] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:35:59,846 INFO: 127.0.0.1 - - [05/Sep/2025 08:35:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:36:05,204 INFO: Accessing checkout page with paymentId=7f4ceba3-3f29-49dd-b5cb-2f6be079728b
+2025-09-05 08:36:05,205 INFO: Payment details: ID=7f4ceba3-3f29-49dd-b5cb-2f6be079728b, Amount=7600, Currency=USD, Reference=test-122, Country=PL, Status=pending, Expires=2025-09-06 08:35:59.834608
+2025-09-05 08:36:05,205 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "USD"
+  },
+  "reference": "test-122_54fd33ba",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=7f4ceba3-3f29-49dd-b5cb-2f6be079728b",
+  "countryCode": "PL"
+}
+2025-09-05 08:36:05,361 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "USD",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:36:05+02:00",
+  "id": "CSF8490D617CBC23F02A00249",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-122_54fd33ba",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=7f4ceba3-3f29-49dd-b5cb-2f6be079728b",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCZsd6chPL+2sHfqBcmI/LQ/7b7Cecf4fRB+xUEAEN8OsEoXRlDSNdQAooHHU31Sj5JXELrK4euHiWipPsEMedktIeYb78xWXBpf1Oxuglcx0Je3+HBAzE7ST0+SvuAqNhbDL+KTOZQBRjx3Y9VEa9nqM1J/W02RGlAfjk6+Oa4Qdv6Sc2MCYjL06dJSfpqUT9AMzvQ7S20lABgxs3Mop5Gc6dqsptTdvFjCAUSCVi+D+h1J/AV3EZHBbFEceuUoTGnjWoz9ENVcZ88zdlt5k3lPPWBc2N31eAVirBTnejYioU/h0IvyCQkWEvA4bDxD2P5xxVDJKjaoCbnrSs4H7Oed+eVVZbAoTTYSSEdfEKSGfIdwU68gWAAwffAQkqoG6xFRs9VeKlcT+501QS5E4Cvl/PRQlxfxchIqUKCbP6vBgOcgf2JVfm61wAIy4JQRLAiRRwoMpDbNqD/JhOHq+kIEwLsNpJcecPbJlmOqmhqdD0POp5OUfFtwr8umIz7s8Jasr4BnIgbtWpnLH88gVSx1ys62ubIqGJ1fHfapagWVDUXsVKhIb3shbulBNVNr0rdcLsgVTPeEcuyiasuQ4YZVRLPG98cacoDfD5aAkOVeWe/i2Ubpw8n/w6BMxxTyTUp41id/xXRTLKBgyU7s7LxtDy4QmdH9mLCnZwKIxuAawzk6Izdx2LUNbB8lJwASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9UoRV2uNQ+BJNGcEB2WcsOlLq0aTRhBLe2RCWdS5fyTh4+AEFW0z0V8X7J/L2dkkvov9AFsVz6+ox5HSfTR8gGOmNCkkP0C0O9zf5PEae3fQoOa5FAnnJsTt5Vw6tdKVjdCiYDOgzzYUr6uA9M8rgf6cBKAx8Go1GjLakoYhJafpUP9THAw6Seei+ggeE/DgvfdtNL899Rmg5nU0y+/zVeun2V0LJ+Xrdew2m5W/DPtHzRxbLWkHUdhraWYMHOuY37BX/IoDzMlutKsm2MKFFIuVr9owYhutf/+g0d1xQLZESTrW/lqXGjUX1DWo6VtDKcOTzMiXxPAPPiboTc6EGRFUa0TMzcKdd4c/gLCAvSqvVhaI6TAQfBk5SxYN5m9y9f+F6eqAL8lLfZFr8Ai4sWq+Id9BdYOSLwbFD8lPdU1h2OKpKVOGc3KHgU0q48ffjgGb0g77A98sWO7MjGGm7/X561NzhuC2EX35fV7GlgNlmMpbtfjMSCVVACb66cswmpGlQTNnMd4SQBoi/Zu4EcByZV5z2hsf/6lP1qv3+QfSizVcRDe4j4zYIRVMS1gy6H/DO8oZsgCGu1z170NXwuL2c661RT+8riS/vlNFsjJmJTe4jObO/WCHqXO2sOu4QjRL0jjZ0JVmXAzmPNpZgVpgYHrQtuqyWHpnHEEXzeDlQ+0zZ312MTsAJXeKGGSXI3pxf4g=="
+}
+2025-09-05 08:36:05,361 INFO: Session created: session_id=CSF8490D617CBC23F02A00249
+2025-09-05 08:36:05,364 INFO: 127.0.0.1 - - [05/Sep/2025 08:36:05] "GET /checkout?paymentId=7f4ceba3-3f29-49dd-b5cb-2f6be079728b HTTP/1.1" 200 -
+2025-09-05 08:36:09,511 INFO: 127.0.0.1 - - [05/Sep/2025 08:36:09] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:41:21,193 INFO: Initializing Adyen client
+2025-09-05 08:41:21,194 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:41:21,194 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:41:21,194 INFO: Client Key: test**** (masked)
+2025-09-05 08:41:21,194 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:41:21,194 INFO: Initializing SQLite database
+2025-09-05 08:41:21,197 INFO: Database initialized successfully
+2025-09-05 08:41:21,198 INFO: Starting Flask application
+2025-09-05 08:41:56,211 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:41:56,214 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:41:56,216 INFO:  * Restarting with stat
+2025-09-05 08:41:56,541 INFO: Initializing Adyen client
+2025-09-05 08:41:56,541 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:41:56,541 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:41:56,541 INFO: Client Key: test**** (masked)
+2025-09-05 08:41:56,541 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:41:56,541 INFO: Initializing SQLite database
+2025-09-05 08:41:56,544 INFO: Database initialized successfully
+2025-09-05 08:41:56,545 INFO: Starting Flask application
+2025-09-05 08:41:56,552 WARNING:  * Debugger is active!
+2025-09-05 08:41:56,600 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:42:30,689 INFO: Initializing Adyen client
+2025-09-05 08:42:30,690 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:42:30,690 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:42:30,690 INFO: Client Key: test**** (masked)
+2025-09-05 08:42:30,690 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:42:30,690 INFO: Initializing SQLite database
+2025-09-05 08:42:30,692 INFO: Database initialized successfully
+2025-09-05 08:42:30,693 INFO: Starting Flask application
+2025-09-05 08:43:05,706 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:43:05,707 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:43:05,709 INFO:  * Restarting with stat
+2025-09-05 08:43:06,052 INFO: Initializing Adyen client
+2025-09-05 08:43:06,053 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:43:06,053 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:43:06,053 INFO: Client Key: test**** (masked)
+2025-09-05 08:43:06,053 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:43:06,053 INFO: Initializing SQLite database
+2025-09-05 08:43:06,055 INFO: Database initialized successfully
+2025-09-05 08:43:06,057 INFO: Starting Flask application
+2025-09-05 08:43:06,064 WARNING:  * Debugger is active!
+2025-09-05 08:43:06,112 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:43:08,493 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:08] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:43:08,600 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:43:10,383 INFO: Processing admin form submission
+2025-09-05 08:43:10,387 INFO: Creating payment record: ID=19cdd4d5-8847-4f0c-b4e4-3519d9f7712a, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:43:10,388 ERROR: Reference test-123 already exists
+2025-09-05 08:43:10,389 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:10] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-05 08:43:10,398 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:43:14,117 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:14] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:43:14,128 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:43:19,599 INFO: Processing admin form submission
+2025-09-05 08:43:19,600 INFO: Creating payment record: ID=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45, Amount=7600.0, Currency=USD, Reference=test-121, Country=PL
+2025-09-05 08:43:19,602 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45
+2025-09-05 08:43:19,603 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:19] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:43:19,617 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:43:27,917 INFO: Accessing checkout page with paymentId=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45
+2025-09-05 08:43:27,918 INFO: Payment details: ID=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45, Amount=7600, Currency=USD, Reference=test-121, Country=PL, Status=pending, Expires=2025-09-06 08:43:19.600663
+2025-09-05 08:43:27,918 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "USD"
+  },
+  "reference": "test-121_5d97d842",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45",
+  "countryCode": "PL"
+}
+2025-09-05 08:43:28,067 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "USD",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:43:28+02:00",
+  "id": "CS76ECBF8E4753A92EB1CA285",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-121_5d97d842",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBIO2nYkUot9WtrWSS8ei0nZpgKNY4dDqGC9Dobng0XaVExhvmPS78ahjZGX3XRlVXQZHCSwfs6ai6LLeMplpDweOSpuwWixAv2jkKfM6lGMysCKk2HkasvdasAsL1V8E4N6GwugZCWnOG16TPIdSJ/jX7HPw6YNJBGYi1BFQXObWw5BoC+EaxH5TI561UolXC/RpDSGAf53Kc8qqmXj6/Mq3GdUKAn/xojfxlWuZbInayyybaUkJzEQCTswcssE4arZTKKAyAZ4c3EPCS51RYx5/Z00pw2hJ2YyMqgAivEjS4fkyJG9UBrYxh96ueZ17qp1nagEZ62IGvskznji4CLEmUHtf1jng1ytaemd8XuD7yu/RxdCnKjrOdtg0oEYn4YSlkLQpyLaHdwxActjz/fTLMenBiofAw9p+35ZRD2fTed5iu3QLBCGLKCFUvrZhT5cvTSYJtYnB9k8kao+4oHT2Uqck9uEoLAVU4t7roSn6Xfc1FOfiDO3wDepHI91t1qS//Xg8KTEU0EXDsfzvY2teU3LW6MZB5OoTuxJTO7dXLcK75D3A0hLldZjbIYYf90cYfxbLitr6Ku7WqBskbwpCy2AjzdRkXkMjgVaT7x8bGPF1UxU36m0CUwO0OExrnFiJGkislMkV16FYiToBP/LGVddNUOV9crhtLPL7B+qQzmPVMajMFF/9aFSDYASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9tYRkSjz+9fdNIwWkwem/agqLkpkXe0dTqsj1f97DT9+TckIZp1QMXO71FmSultSQJa29cmJiG3x8Mz+wCl7xySjSxNu7WrP2s5xp57I07fM7w44cXa71UPtrT7FONnb5bMdiujBHJaFaXHUR+xfPej/eXoACElDkcA2bwOfjC/sKKbOr96t7ZB1Wj9rINEXxnQ8B35/uqLtiMaT1S4GKu5XlagRTQLFRgKqOr+PWqdMpd3UELeo0mOU1UgnQnYy02mP4roSis1gAnFR5EL6IUiHIdndE79J7ffv20eo8iBAOwDClo9A3BdKSIHoCy9kKzJf/+7h17ML5PveSub0yzzP6KDhAGkJUFMNI2jYSBK4qe0yeMrGfRlrZYwOzeB6u03Gb/kfUs/2/+dpfeJhr1wCKAFHjhp7TjYEg3Q+xvxAeAlO4iRy/I01aUjFZlmK/w3DFDEq4xcWV5SA+mPntLhuSc03TArukPw2IEzeePvptib/MX7+2jAjbhkn+p9nbvKzAGG5YHMISKEatRItD6UmiU2tRhd/8ZQTB8IEgYalKokpbCn1HfhkDrr87rf3jh2lcDRCVijF48Gx2rUaavW2tdTB+FBYeH69AJCbVEIdMhjr1qjgmWI+MCgFKdh/qW3x/P0K0OnNadTvx05KEa0DYd8kTvYRkwHelxoL0Mol4XuN5UqC3oGjVWsXpJYaYIfAEfZc="
+}
+2025-09-05 08:43:28,067 INFO: Session created: session_id=CS76ECBF8E4753A92EB1CA285
+2025-09-05 08:43:28,071 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:28] "GET /checkout?paymentId=5fb45c84-8f26-4fe2-adeb-b7a75f4c2f45 HTTP/1.1" 200 -
+2025-09-05 08:43:31,388 INFO: 127.0.0.1 - - [05/Sep/2025 08:43:31] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:43:55,224 INFO: Initializing Adyen client
+2025-09-05 08:43:55,225 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:43:55,225 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:43:55,225 INFO: Client Key: test**** (masked)
+2025-09-05 08:43:55,225 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:43:55,225 INFO: Initializing SQLite database
+2025-09-05 08:43:55,228 INFO: Database initialized successfully
+2025-09-05 08:43:55,229 INFO: Starting Flask application
+2025-09-05 08:44:30,242 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:44:30,244 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:44:30,247 INFO:  * Restarting with stat
+2025-09-05 08:44:30,569 INFO: Initializing Adyen client
+2025-09-05 08:44:30,569 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:44:30,570 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:44:30,570 INFO: Client Key: test**** (masked)
+2025-09-05 08:44:30,570 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:44:30,570 INFO: Initializing SQLite database
+2025-09-05 08:44:30,572 INFO: Database initialized successfully
+2025-09-05 08:44:30,573 INFO: Starting Flask application
+2025-09-05 08:44:30,580 WARNING:  * Debugger is active!
+2025-09-05 08:44:30,625 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:44:30,849 INFO: 127.0.0.1 - - [05/Sep/2025 08:44:30] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:44:30,862 INFO: 127.0.0.1 - - [05/Sep/2025 08:44:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:44:56,339 INFO: Processing admin form submission
+2025-09-05 08:44:56,343 INFO: Creating payment record: ID=ecfb6adf-685d-420f-bd64-0cf60f54d8a6, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:44:56,345 ERROR: Reference test-123 already exists
+2025-09-05 08:44:56,346 INFO: 127.0.0.1 - - [05/Sep/2025 08:44:56] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-05 08:44:56,358 INFO: 127.0.0.1 - - [05/Sep/2025 08:44:56] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:44:59,413 INFO: 127.0.0.1 - - [05/Sep/2025 08:44:59] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:44:59,428 INFO: 127.0.0.1 - - [05/Sep/2025 08:44:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:45:05,379 INFO: Processing admin form submission
+2025-09-05 08:45:05,380 INFO: Creating payment record: ID=c2367e77-deb0-41ac-bcba-9d52bb08062a, Amount=7600.0, Currency=USD, Reference=test-1, Country=PL
+2025-09-05 08:45:05,383 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=c2367e77-deb0-41ac-bcba-9d52bb08062a
+2025-09-05 08:45:05,384 INFO: 127.0.0.1 - - [05/Sep/2025 08:45:05] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:45:05,398 INFO: 127.0.0.1 - - [05/Sep/2025 08:45:05] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:45:11,735 INFO: Accessing checkout page with paymentId=c2367e77-deb0-41ac-bcba-9d52bb08062a
+2025-09-05 08:45:11,737 INFO: Payment details: ID=c2367e77-deb0-41ac-bcba-9d52bb08062a, Amount=7600, Currency=USD, Reference=test-1, Country=PL, Status=pending, Expires=2025-09-06 08:45:05.380570
+2025-09-05 08:45:11,737 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "USD"
+  },
+  "reference": "test-1_4e42d9d4",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=c2367e77-deb0-41ac-bcba-9d52bb08062a",
+  "countryCode": "PL"
+}
+2025-09-05 08:45:11,933 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "USD",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:45:11+02:00",
+  "id": "CS69351DBD2B17C9305AE7273",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1_4e42d9d4",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=c2367e77-deb0-41ac-bcba-9d52bb08062a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAzdurwP7SjajgIhlLDikEVBH9jrD8pnSllYQn4t6/5kzhOplzPyyLNjhPV6eIbg6ks0sN6Gc8OFoD0rspnCEKmaCUV8j5XqnSv0de3z3tpodYRpGFztiXC9d6j1LHdzR6VD4pNvl07uMuyqA597FhcoMEuI5uXWVRNKo9z8X8FTG5Rm/nzGOL12TEotjwzKGf4mNWcQMF9jEYCtp9wcNlaBIh+HayAS6SBKpuc0Gm16tC7PzgIZyTN7U0RdO93QNWppNRYrE2kN7Z1/G9GisGivzNPPWOReyAb/3OHvLX4ENLCz4/iKQ/KKRjLGbYsvOJltP8Et1fdO7BjiKvudaPoOdmfOo45KEWhVDq8FvBNhnsPGzCgjJAy/6W1KRTxvbHgAbXL8N1KA+Roga5C2iNBipsMhnqZhH85+9eLOLBOWUpc1H7xHI9JBZd2Nvad7ODbuFX8lwCTwhBV0FBnJp0thHdb2mrBaLyt6pcFpcJn9KgINOjLa/5yZ3Pwic5KvJLl4IjocZ/SdwtGUjn7kr+fBaqalEGhaDXND120mncL4IeCaRcOH3+7SzHiM/vkIxt1ScD+GnaanHQmJ454GIXpFJ48s3VzK/easE4Zpogv7nYz61AVYe1fC/inaJ+55xaw7Kit7CPhJXZ6JAsw1gSCGGJrPJPLWzUVjOt60XUtxQxnCE1gckFmK8N9cmAASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9F3VIC3CsEsD/+RcWIf7M94GiERvoWAPMEwlm/OMNlGYARijE3NsLrE2h9agb5Q8SZuMke9drMUQwsSj6BIPkwsecM/0GXAFlYvUPmBzURZKskQ8vD3h1IlT3HsLTsIxSi2ScFK3IIpEvKq5PbRiWvdDZUbt3gIvQFqp0O+r64pgRvEaj+CsSSYJjKHi3n4RBuxwoHc67wsZBGCwphQTBpmV5ADUqr41uahOn9JksiPJHk50fIV8D/xlB7li68VLuk2S7xQoilxIXNjUEAGdHvbQ+MCexbfyOd8wmAvU65Q8zJhOZbhXP89fA+JetyG5XtWe2v9tsflTTopWE6uvh9BOx/0w8tHb/HbOfbn8w5wsP/al8QB33frKBitHIZ+5I5arZTW+UhOE7wnx/lRorFUY4z+ihsu58O8PH6R1LLKCvrUd6ar1gg52iI7JvpH1/5B1EXU8dN7Ag1t1CDgxwwswppDcVjOqZyhh+ub6oMxKUGuE84uvWZsroH+4z9BOLlVF/9/p93fo5BL9VDkc39dW4oadjhBvgD7XTIrcvk4EWRmvjvQ7aHNk95yW03BVLBBvONTv56vC7GUNRog4rp1KrlNZku8yGkfjBmf2cugTkJGYRkGE68mENoVeT+2dR+kqYVKtfEo6alvc220PqC78gfc9kD57Qzpr/qpjE4XrFD0yT4jIug0/ps9o="
+}
+2025-09-05 08:45:11,933 INFO: Session created: session_id=CS69351DBD2B17C9305AE7273
+2025-09-05 08:45:11,935 INFO: 127.0.0.1 - - [05/Sep/2025 08:45:11] "GET /checkout?paymentId=c2367e77-deb0-41ac-bcba-9d52bb08062a HTTP/1.1" 200 -
+2025-09-05 08:45:11,955 INFO: 127.0.0.1 - - [05/Sep/2025 08:45:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:45:39,374 INFO: 127.0.0.1 - - [05/Sep/2025 08:45:39] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:45:39,388 INFO: 127.0.0.1 - - [05/Sep/2025 08:45:39] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:46:55,768 INFO: Processing admin form submission
+2025-09-05 08:46:55,770 INFO: Creating payment record: ID=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc, Amount=7600.0, Currency=PLN, Reference=test-12, Country=PL
+2025-09-05 08:46:55,772 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc
+2025-09-05 08:46:55,772 INFO: 127.0.0.1 - - [05/Sep/2025 08:46:55] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:46:55,785 INFO: 127.0.0.1 - - [05/Sep/2025 08:46:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:47:23,962 INFO: Accessing checkout page with paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc
+2025-09-05 08:47:23,965 INFO: Payment details: ID=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc, Amount=7600, Currency=PLN, Reference=test-12, Country=PL, Status=pending, Expires=2025-09-06 08:46:55.770126
+2025-09-05 08:47:23,965 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-12_22b128fd",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc",
+  "countryCode": "PL"
+}
+2025-09-05 08:47:24,198 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:47:24+02:00",
+  "id": "CS6AE3A3110498C51BBB5623C",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-12_22b128fd",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAvVz9XRAAhO00Zzsb+gtkTVViqW064yap7YCJvvL4ci01CajpkKhJ0uTjg5jdgkb7H2gIc65zF3q37BTwlRyoKRAHI+z5TsHqNTTt++r7i+hiq269DUT5wMnDSoGUuLdII3qEhl3lCFIEdkrI8oItAjO0q+IwTaNfkemtOdjmaJHx1E6M8FpJkCODj0MNbG4XhL2d/AcStNxawCmXUxjNlSISrY2+C7kjh5cfDaW6Wj1HIN+Gv0RK8szKdO5hHpbtr0pu8QDTU9/CDiB9uXrK7VScN4H9GDIAgTansGCrWwmbjZ4hpYkwEnH+B3ct9Y7bC3lg/lMumYTYH9E7agMXUWwufDEiqD8TrWSDvtdvdBgqFsWLkKjM7jZuLrJs34aSxedHBjIegw85btFyw4NGUu6VLydpk5WQjOE2O6sIb4JuvUCQTR7VHd6Bmh3oFvqjOzd7Mxk9e7h5OCcR0PaUDj4c494qdizhBpQM6HhF1qbTNLdj7YCkjEPSP7DrqaJx6vjex98A/vspAJpoTkZa+i6epEGFv+ayC89igVvxJRvp8gyS1F7xQCoAQaqzMuOCtHo/VslymB68qvTqOCrfMLHBxFMnAty4mFE0j2p4tSbPZ9hwiRNcNjGJel3IAwCSusf9IzLz1HV4kD4NpO5VBsH6XXSTjSkyd94xOsXZ9FgyfeG1rgi6EQAY+KBUASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9bScHKSVHuEMjKAxTvIevOzRGl1oqWl6ZMah/nwaeNN4vjaZ4hoVehXaDbOalqQnTpaXkZAWR7eBGhaB1+nnshj/TLNWyTU5WqJa6t01uFUB8BQYB4SWm29u2B3j5CVFhrZo7MiVJdj96OxOnGYij9gxUdWypDJrfU5YfDvmKhNi12gf+SgSZtzJhhlaZhZiUJzn8Y3nkcAt+qBSD6TwEbnZZRtb+4q3xDxmN3eg0KPiga76rL61apLHL/rL1vVp99Qzueg8UcmuEzh4mdB8GrSDxM4wU38QPkNqjK6M4TSDRkPk5cg/wR6Nh25NUSgjQnGUofp7+jaJlR1+0q23cQrIEmiiUfAQ5dPgLR3LwnoJxOUxtdzv7Wsx0/4c8n0xrNXRuHbidi18qFvfw65xGqw9LTyJ2b23VobdkTSGe3jdt+0tzWV+Pa2uRw9nM/d5ndNdpD2QPXxSv56Ks4xy5zoxi4lBH4h8FkDz7NFlewXhmg6h8S9MQ7LG+IHe3R0N7jtj9jZgNCXcA69QK46Jci0Ynha1fc5QqnyCbzkltVctESfVzFky+tQJSqr60rRHYo97iwbCLXn9TEmnGxmPDc9Tktf93doD25I21fMGZXf89VPi3sld47G15yQkY825haYCo3j71Fo5bCLqWSHGuoit4KDn6ys0XII+ex1y55EwPlhZjFTjfgDkvRhm2E5sJ1AXY24Yw"
+}
+2025-09-05 08:47:24,198 INFO: Session created: session_id=CS6AE3A3110498C51BBB5623C
+2025-09-05 08:47:24,198 INFO: 127.0.0.1 - - [05/Sep/2025 08:47:24] "GET /checkout?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc HTTP/1.1" 200 -
+2025-09-05 08:47:24,217 INFO: 127.0.0.1 - - [05/Sep/2025 08:47:24] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:48:37,258 INFO: Accessing checkout page with paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc
+2025-09-05 08:48:37,260 INFO: Payment details: ID=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc, Amount=7600, Currency=PLN, Reference=test-12, Country=PL, Status=pending, Expires=2025-09-06 08:46:55.770126
+2025-09-05 08:48:37,260 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-12_30232c5e",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc",
+  "countryCode": "PL"
+}
+2025-09-05 08:48:37,387 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:48:37+02:00",
+  "id": "CS4A09CC003430ADBDD83F264",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-12_30232c5e",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgASel5YMZnRA2JgDPaChvo5iFwAX4hXTsc+GqdCjhOme4mBVFiU89EXwuR2xClmcAkaIJGf2I8XhUO8Rx2lXihPhRcOxuj54Q7t9DAe9t10hy8lOub5JNttrN2uIT746ik9niahqiVms7gwUsPL5LFGiJULtInPtt5vbC8A6LUgETma4tqcCrGQnXBRpsI8qEBeA4jXSlFb60ffZiQvfvjmImdhMyIeAlLfkjH4aPqC9JFt7Rb+0rjBnfDnsR/O2ptpGNmwJO/EVND4j595SPBHaxHlgo6uhn1IO0W4A4XHgyr+n2XmmsDCsBx0AGaZ+ZhSz/poQMwjHj1hJTDE/03KmZb03WM1qCbgU4r1QnJPE1/LvDPANfo+xA40jcrqJTKGnSzyqrz9hHb1gZ6dgCHk0TMjdvMhFkMro019TWJfWPhmGWCAr2GVNufYB3jtbH4UH35uRjj3Cmed4oJNrsaIsXqmdnKiZAgzGkYEk8b94cE/XCzthMpD9yCqLqg9Fg2YGa2nFP1NUMO9Qa3cQhKcAVT3dV0DiPfDkS2vWKybeacDZ2Nr0uaQ+8BtycgKH6dv/XrmfiqL3+0m/bgTUU2a9prvzTBx8tLsJwr3E6hW53ex+3kS3HhJr319BE9CGmthGifYylvPKYZPzxZKlKQzcAD/Y1+dMzqhcLuGU0WZYgwEOALgIxrmLL1kOoYASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9eAF4QTmxmxZh9tp6ORcDN3o6cFN0SbyBDalR7hBsuaiwYRZXILRIPXHhoCR5+Yy/yR880Aq8F9ISgWp5bBe30DRMHLal7gzIdlR7hUAW3Ned0NkSWW6jKarcF/6st8Mxqg9RF0Gx+X56+6w+4GCWDMiEyX5O9hcIOsmj3zWfaI6JMA0K4vsw+ihALe8F7aM98u47YokY54/M3EdHody/jhQ5mhmr595WFFnr4iSNlYqq3ZBUcJinxdxLQUPbSNgs6Bv+s0TqjASVqjX485j/3VOxh3mbUgLZgQQrUrrFjlLETAs3o9IgVMCoCs8SNpnMYBupb6H3af3Ak/37LDy785wxMYQABPYKCH7QqdhLeVd+MsgHgl2RDC4118IdqxBazPxiUjy2twJHcVFmgaMnJ3sHn/7lr3vbL8K8X11BBMGAjf6B9GHs2s1mr78CRf7F2XPfBd6xfg2eHID90zdNkscHsG20GktXOw/+6OybNLf191CDZQEkybKMGGIce0/nPqHlFa+9o5otayxytFgq4KutCXI9UYUX5+I+GU09x8i7SiR2XyL3Kha0KnJwDCaI0cYXlTqhfW8V1R8bxshb0rlvtJDkj8mtA6WaVzNyKeU86Nb7v/KyNGBwNBpToxHqnOw35DkbvoTmB1sMmmBo2yZt2Z3j3cJBN9P+qIfoLwcMxxXXZCu7M1dmfTtp9ir9XjY="
+}
+2025-09-05 08:48:37,387 INFO: Session created: session_id=CS4A09CC003430ADBDD83F264
+2025-09-05 08:48:37,387 INFO: 127.0.0.1 - - [05/Sep/2025 08:48:37] "GET /checkout?paymentId=296dc387-bf0a-4c75-b821-6b6fe2fbd7bc HTTP/1.1" 200 -
+2025-09-05 08:48:37,405 INFO: 127.0.0.1 - - [05/Sep/2025 08:48:37] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:49:58,200 INFO: Initializing Adyen client
+2025-09-05 08:49:58,201 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:49:58,201 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:49:58,201 INFO: Client Key: test**** (masked)
+2025-09-05 08:49:58,201 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:49:58,201 INFO: Initializing SQLite database
+2025-09-05 08:49:58,204 INFO: Database initialized successfully
+2025-09-05 08:49:58,205 INFO: Starting Flask application
+2025-09-05 08:50:33,218 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-05 08:50:33,219 INFO: [33mPress CTRL+C to quit[0m
+2025-09-05 08:50:33,221 INFO:  * Restarting with stat
+2025-09-05 08:50:33,528 INFO: Initializing Adyen client
+2025-09-05 08:50:33,528 INFO: Adyen API Key: AQEx**** (masked)
+2025-09-05 08:50:33,528 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-05 08:50:33,528 INFO: Client Key: test**** (masked)
+2025-09-05 08:50:33,528 INFO: HMAC Key: your**** (masked)
+2025-09-05 08:50:33,528 INFO: Initializing SQLite database
+2025-09-05 08:50:33,531 INFO: Database initialized successfully
+2025-09-05 08:50:33,532 INFO: Starting Flask application
+2025-09-05 08:50:33,538 WARNING:  * Debugger is active!
+2025-09-05 08:50:33,584 INFO:  * Debugger PIN: 940-524-855
+2025-09-05 08:51:20,356 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:20] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:51:20,455 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:20] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:51:22,605 INFO: Processing admin form submission
+2025-09-05 08:51:22,608 INFO: Creating payment record: ID=5d687a7f-5e62-42c6-8eb1-5c531fbe2a86, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:51:22,609 ERROR: Reference test-123 already exists
+2025-09-05 08:51:22,610 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:22] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-05 08:51:22,620 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:51:25,072 INFO: Processing admin form submission
+2025-09-05 08:51:25,074 INFO: Creating payment record: ID=57009773-d705-4151-bccb-2a99bdd10bd8, Amount=7600.0, Currency=USD, Reference=test-123, Country=PL
+2025-09-05 08:51:25,074 ERROR: Reference test-123 already exists
+2025-09-05 08:51:25,075 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:25] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-05 08:51:25,083 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:25] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:51:27,284 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:27] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:51:27,293 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:27] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:51:41,356 INFO: Processing admin form submission
+2025-09-05 08:51:41,364 INFO: Creating payment record: ID=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7, Amount=7600.0, Currency=USD, Reference=test-, Country=PL
+2025-09-05 08:51:41,366 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7
+2025-09-05 08:51:41,367 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:41] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:51:41,392 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:51:47,001 INFO: Accessing checkout page with paymentId=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7
+2025-09-05 08:51:47,004 INFO: Payment details: ID=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7, Amount=7600, Currency=USD, Reference=test-, Country=PL, Status=pending, Expires=2025-09-06 08:51:41.364543
+2025-09-05 08:51:47,005 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "USD"
+  },
+  "reference": "test-_4792132b",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7",
+  "countryCode": "PL"
+}
+2025-09-05 08:51:47,156 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "USD",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:51:47+02:00",
+  "id": "CSF76EC02D64F0829C93B82BE",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-_4792132b",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBEZeO/GXlofnU3v4aidJbjfIbp6xp4uU37M3+mByh1r9BgXZEkk85pBEmBwvhxy7nSjUjxZevxKn1E1EaN/ljL0UBEHQ4hGbmWlj2iABqJ6FfZD+qS5GUJax6A+mQeOjuvNnnR1rmpukIOdl4F7WyYEH9KjlVfazBuosRyAOqFC2Pjc6L1hGQeS7sHjtZDG8X6gAI8NobB/ohbtfOjlqhC2bvM+aJcU30LOt8Pqp+yhbXxTABxe+La2dVluUBEupvI+wle7jdLL8HVIPaCx+rQkb/Gl8cEVpWTDRAFbUoU3e0C/oxD3oX0aBy8EQAQklt5nNlBdGZzyIwUAVbjppB+Dho30hqFEGIQs+2rn4/wRJd89sx2g/OMYVrFiSfYqVGDuEp7QQ0adfuxamBBAqMNW8o9B3qYomjX9oxzqSdQOkEx4MIqBGO10UsRhK7bbMP91Wdtghiz8H4ahUbEniDjL5YGI6QBw4wAJvhbx8GZJ/QkAdNcJ+O1nnbxSGwreJUtVMvJvM9xSEJijPyPAIlmaE03c+Pg5U40ih9jNRBMisg60jZOoCvnUhbh9cXD3eRa30H0BApWYtYZbJ/YFLeaHpykpdFC2ZzUiX7wzeM+opFxO3bT0QZ8aUjNMxHowq+47fhxQZx22DQik7WA84nisTghIUJGVyVUfcN8Ewe84gyurp5BUx4uYeCzB6oASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9AmkHEojlaXA2w6UhgPANvnK5VTF1BGRtcDEhWepjj0nGoUQJfcEZxht/SV9/D4Wd/Ngy0prTcc9fuz6RC37OE5biCui+LGI4r5baQ9Klnh7BlNDnXGzKsEJ1ntbzeLzkRB7nViK2QjYvGgz2CKjp9g0Zk9svHWmsdeqbUDM4TGSpOK+3FqKzte/jceVxe3OWqLsno0G/VWAWfwki9QEJxSQuacAXDPVS+yZzpVrUFdO/vzu6Bqit3cDeQ+qcnRm17MIBuSkdQGXxChoe0sT5ODh+4CqexoBjMMkADvimCu97evGrcjfY6fTM9i2jmSTl4NDGC9XggTXkf/KVYUguNTM6SHdiZqAy+9dSxHru7dn7sdfvL3Vg2vLQVK3odkoGNzJV/b/iI8M5l3POsdW/4tHt/3d3GPzFpGzj9x5hfffuy/iMj5+HBq+bC998h/zr5/2Afo5DqtCV6bsB2YiRn43K35Bl5QdT8wXGuIN2jtxvI1aYRMxti59RKTosrdc3PG8dEHzSPW9TgeFXz4hOObNoWBY/aFntrU+6bpv42D7OxEl+eANnZl5+7vWtBzQdl5/mhp4p4vBCtCp408lPMuFkk2eBmdVQojYIlIx/ZjGNt2y8XVRsOemUf9NMaqD0VLWpIuQkD8w7ukoZ72/EBLRP4Tx1+lCty42MUL6Epbxkdm9go6PX6Bv9lOpexdKO"
+}
+2025-09-05 08:51:47,157 INFO: Session created: session_id=CSF76EC02D64F0829C93B82BE
+2025-09-05 08:51:47,162 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:47] "GET /checkout?paymentId=f1f6b8ac-c53b-4c38-8fe5-c47da8b528b7 HTTP/1.1" 200 -
+2025-09-05 08:51:47,202 INFO: 127.0.0.1 - - [05/Sep/2025 08:51:47] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:52:03,475 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:03] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:52:03,491 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:03] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:52:10,385 INFO: Processing admin form submission
+2025-09-05 08:52:10,385 INFO: Creating payment record: ID=fd2dadad-407f-47c7-a919-0f3907abda6b, Amount=7600.0, Currency=PLN, Reference=test-123, Country=PL
+2025-09-05 08:52:10,386 ERROR: Reference test-123 already exists
+2025-09-05 08:52:10,387 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:10] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-05 08:52:10,398 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:52:13,043 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:13] "GET /admin HTTP/1.1" 200 -
+2025-09-05 08:52:13,058 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:13] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:52:25,199 INFO: Processing admin form submission
+2025-09-05 08:52:25,199 INFO: Creating payment record: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600.0, Currency=PLN, Reference=test-154, Country=PL
+2025-09-05 08:52:25,201 INFO: Generated checkout URL: http://127.0.0.1:5000/checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:52:25,201 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:25] "POST /admin HTTP/1.1" 200 -
+2025-09-05 08:52:25,214 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:25] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:52:30,694 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:52:30,697 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 08:52:30,697 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_7b567cc8",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 08:52:30,895 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:52:30+02:00",
+  "id": "CS312AC8589A066D22D97E2B3",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_7b567cc8",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAMBjk5ZacJhoNJaCHxD9h3iDyUTlS0E3pGmD4JmMAHcIIpPulcMSzj03nXxFJR/bekgbKTXW2Jq1PYUlXks28pJHCqz9LBMcp6a9TZohtcNt81VayjtHtZhUUqIY5gEAkQqIcZRd0Y6U2HlcNHc5jxocAOhcxh8FsdHIpYbQiX3H1ioD0o4DoyGE7HSs0shv8x/QVFTGom9IC34vNyvigQcATNVk+fcE/xy6M56czj3smQR/sgDFcH+DB1gqstygl57+/7hyKRGnwuNbgD/r4ks2n0/F1nTwrhbMeuqI5mb+3FNeS9++k/fVh1SMcyBFJ7SXTGv/rCH19BlIITqwkYPldO4T9wM9qkOSFoO671EGyIO+jVyfWO3K/adPXzr+PV+UovK1HSZm50CcW19Ro/4ltq7jyyMqAQcXIjF5tr75cwULWyi0hGD27wKWtLzHoOhLHQdYi6sMQOVBvvtyL4CloGBEn8SoUC42Af1KqBQ8BOUJQjKxK9Yt6s6lkzwoR2z16zmTMFm/En3XuEevNZBW22DpfNJevJbkWoJDz8+qA7uryF2AuU++KNXmwN/ow3UsqnHqWrulpxvanccRYuMAmqBbr9M0gmEdldWKmJvgbN9y93BnimYxgDavsDFTTRJ3pRhdiVaeoVnIin8fl7HnLJZlTOXOeVR43ptXNuegwQZvnTI+DIQlWpySUASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9Mtk5/KMSuvdZgi83Ug8yDDirpZXke1xQWfZ2E+oiz4+OezJdLZYIVozhciUHd02lnYrd2l2jTJaujsFCH5VYhkaI+lFD3mWp2RhzUFjxYIz15//hmgUSqF+n5Fb6sKaCZNn6BHcxs/K13Xa6WpudiivacD0+m9SEn20DXmUttpVCCdS3KNjBDb48qoaqzVWjjDYdBDJe2/O6ZUgWnN5LWPwGo/HR504ATh77R4Ye1Gy2zONKXoZG2Ab5+9y2/I0NnaoVOWod35BCs0+gmeJzZnX4uNRThazuY9QdyHRgrJlWPXGDSkeZPHvJhuZg4GoIyzmP/DhNhrQ3tjHR8b2/Kj3uZe+uXTRSL3eZw/h41+zdivTMsIOrQufzkI0BsxZx+3Y+uRNvFNTyGbs1i8FeKIDbwrJrxPzxFOMXM186EMGGgpQ5eR4er6DxAtSrqQ/BB3r7ABkmDV98sKYXHEMBk1u3qbsLVidqoj8vY9Hyw1ak5BXcsyZm2WEpNnZivkuED+4tr2j68//EhF/zETux4cVD9vCqVmPR4ceg4RZmbK2B+G8m7240i0m5Qdn5ge8aBNI2p18tVuCyJ+28DrH07PAMFD15DALLVQhmcp2FZmsR+l3vWJyX4mS/QREG86BCTe/Y0twRy3UApHWeOfygEZ50gh+6/Lb4JG3gP36UMzb0Nx4V1/IuEdDQoi+ORzLYWtKOsrsD6g=="
+}
+2025-09-05 08:52:30,896 INFO: Session created: session_id=CS312AC8589A066D22D97E2B3
+2025-09-05 08:52:30,896 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:30] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 08:52:30,923 INFO: 127.0.0.1 - - [05/Sep/2025 08:52:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:54:21,767 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:54:21,769 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 08:54:21,769 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_3fbf1d4c",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 08:54:21,933 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:54:21+02:00",
+  "id": "CSF938903A1F9EF1E821A7254",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_3fbf1d4c",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCOWF4/BKnsuNuHT8WywotcwbLL0mIbC5JNPpRac3Kgu/4cVW88BLsZdBenr1JhBijOiJNbMnBL6pHDSCDDISv6tAiCllIcVqqKEN8K4WJlzQ9PO36Pt9ZfFgiRxAXsikDcACFPGyVMGnB0b2ky3EEy8E/cVFHzvyHX+Lm5ENJl/UhHoPDmtIlmUSwVhEN54JcdnF1W7bYeawTw/8jsU3b+7FWVJoNf/ANh6NhgaS9/48gNE3Yc4cRaVYo/QqW2ewyvAIbBtKU0JPHbglwZ0e1/Vms8BzBAgnV+RtHDWupKaIncT5ueGKBRzkluBuvz75iY9rR6JrfjzTRQsbGIyvNYdT8xKnM2C8jqe+BAkreS4OjxiPXLVy3tkTcktUmIYtjxnR7V7qAUD4tn3QBKfxCZIxpQrnJkZSJ8kyW8cths1Auo3Ukh4jtwPUI12oUE+V+hMd6ZLtflMSRlDgVHdJ1tJf48qr65AwWLUs2tRnqpimQHy+Wj6sKKYCJ/xbTtY7S1dCHLcy4jRxTWMnPrbVbMCrk3IhH+Gm9erNO1R1jKzFEykwCbESQoBRUUbaHeX76GDxq/xj4/9odA+RAGDOCTj8Ii0+wVNmsS5HF7XVzFq0597ZRAcEKNmI0qXEnt4nFI9xJdSbXMdxldCp46OK+pDGXDYLDfxd7D/PRCAn4ANwyb/tHFoz8AAdEqaN8ASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ938AzYBOSSXNP5BuNGafeCa7tMY4L9ujSsA202qXkwTrmpKEAhOW1Cb3QHI1JP2ymY1Lc2xQNx2xPdOicpRWJ/VWssef1XG5u5S4fW7RYXGiYbvRrzXVE/gxViwExJ45N+jD8v6PVKCf9V/bQya7b9CCtikX94hiGrRJXZCZSEboII6ApPz5o/gj0i8/AEj2GSCrkZwpt4D08zKj7k+EKZ3aLu0OfXLJOqJoW8joUk0hrxpIkji0n/UxlgwGEwnnPYlwC1ZKidcusAFYATpn5He0VjguQoaX8o5SorBk0Us6HBUmV5hp20djNDV/JiFYTCJe1o0HrYAoasCt8Ps7qnA4W+zOdbG7RL50BQJEBQ1ELr08HFwxB7SOtK0s1VK8KC+BvK8F/BnJM68przSD1rDkIw+NXRg3E17Bx2Y5Oe3yI7d3mg9ZwOWjm4q7mUkkK/UQtR88iGbarLDXKgnVNMoFhJaxNqF5Wh3kQ9Slefw09wkQUfmlqug8wnPGwzkHIixMhSMeubTuURQBYNLkp2uRI466V8h+PHfFvGZonwbub7x4yEhTM8QedkKXYgmTVK2BS/vhD8Mqd+PM3eHJC7v90WEW7kTIi9t9kN8CfxLqIC6Iz7vlUCy+4c4zw+UbYbnqJh/TLJkHzJ0ahcAVOi+dLHKTogkqQU6H1J2GyrrulpFaigntUNl7GXBQ3T/PG9U2x9BY="
+}
+2025-09-05 08:54:21,933 INFO: Session created: session_id=CSF938903A1F9EF1E821A7254
+2025-09-05 08:54:21,933 INFO: 127.0.0.1 - - [05/Sep/2025 08:54:21] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 08:54:21,956 INFO: 127.0.0.1 - - [05/Sep/2025 08:54:21] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:54:43,026 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:54:43,028 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 08:54:43,028 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_25ed5a91",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 08:54:43,174 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:54:43+02:00",
+  "id": "CSE7284C3008FFD8DC9D00292",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_25ed5a91",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCFhxVjw9wkmVxGKRyyf1DhCOfBL+tk7tm3tFJapIC2FYyX5fTb1m80jPurF3y/uWB9gd4QUELRFPen2uBO/p2KBdZ7uRz4qteSid+fuo4vTRL9RB39TtMVa9JeZnabNEX/+7MBGpjsYUXUTb7m0RsyBSsjbaxOFGWRVE0p4bTlMuk8LbKK4il3VbdyDx2+uI6KhthzBqvJmN3J0fRx4miDm6E8cz7XWUQP7XiN9HD1efY6EFHiznzDzyngwehnrvhxC4iiVmuMmEyLFPfbZ9Cm7WMsqWMBVljJGqxNeUFTc9sGBPxy4Gk/smD9SsZEb8YOOI/dCpdjsis7fsOS2vrDS7mDNVStp92ZunnV8q/53MVydkmtcXZ+4g/m1+VZe9fR3JwWuLg0hQW7kOsimwVEEemRcobDX0DeSJ3WEJjyNZ3YDT1hAh0fGW+fdQwnOLJ9CiEfNkBVf6nWqZiBmj1mW3RJyxVLZps8e2MMKltZop1IGg+1BYDRi88d27sqqb0SvJzK4uvS+sC110fVwVYDIUFEdyBOb/rrBG7qRhj4nKQ0zWwdybKPN+1CI3IsYfMMrdktHePy4uB8Ibyshup6d4+c8EPPz2DGL5LJPrzekqLLh9EUptHVxLEyHg6QzXa7lvAsxtF3dfb8bJobmy+3PprRl35nqZ0vQVdc3aRIkAzI4Aosi9T51HFLxL0ASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ907YDxH/XdilZqnr12ZxhqKFWH9qQu89+fUIk+HA8EhDoK2zMG7lCekzKmr1sN9GIJot/fXsBiMdpWbs4QEQ2mlf48rW+gxtKYBdMm0C76meL6px5BKJUa+ja6uByDC/magzo7Zgbi8BFaIZ4tOWklYTiUGSTIq4V7XrpKXTvQWAHetpj48Ntkkt/QtLpWngbjY9FTeU6a2+YULdLzUyx1y97KtSdcFCa7mvTVZsScmX+K2R0PvqLn+UYuJF917aIUseXbsD/IaMlpRCSq5Ehzf+juiJNmC8NdcqW+JqhEwEuq/RZ5g2dOqCMKlIt+gR/TuDQeF5MA6l56JWbOA4eUneua11nUu++WF+0tRHCqdD7KpTZBOyzCk4+Fhkn18Spbk+j+R47r2B72ge5zFwlG+4bO88SZbwZy+T7BeDrl6MCDWBNuWJ42HVSGfj0wikvcuimQhHC9N49ysr15Tn90zz0nFFdKG9RLo40+CSmTYS9HP8I+Refhy+7HC5rU8iG+Ut0ZO3r4VhV6m1IyNTJdv/n3QgSopzKqn4sqfMBm79Ak9+26ueyT0y5EogiEH3gRruvYhxIj7f+1J80QEaT7BLCMC6UZe+Db1jP4xwthCVahEZKVxajC59sjK+4ebDukEaMWklGL1Ndj8F7tSamPRN1aFWGm2mGGsHOKW9MbYSzXiNCz47+ZdG49xyhkD2wwxtXfg=="
+}
+2025-09-05 08:54:43,174 INFO: Session created: session_id=CSE7284C3008FFD8DC9D00292
+2025-09-05 08:54:43,174 INFO: 127.0.0.1 - - [05/Sep/2025 08:54:43] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 08:54:43,191 INFO: 127.0.0.1 - - [05/Sep/2025 08:54:43] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:55:22,953 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:55:22,956 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 08:55:22,956 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_fae9cca2",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 08:55:23,139 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:55:23+02:00",
+  "id": "CSE220E91F93FB9BCE95DD2FA",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_fae9cca2",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBra+Yhx/4F3H3wgms+yCMFfUl4G3EH1MfdfxnU5P0n3mfTmiMWJ3bi1WJeFChUS2uCltJqzBl3mPeSFM7fHtjaxFXXoJ3pKJDgnYlQvqm87C2cFtzro/4GflMFRz4d5+LSlT85ZhPanWZKgc8au6KFUSz2UvfeCRwe35NyrP9wlYB0+4rcjSb9CeOao0yqQ43QTYitDW4qVfX5qhqQcuy2bwPAhgzX+kR1UwtUkOtQiIM6kx0M/MAjGpA+DiNI/f0S/Ii6nuZnNEVgmS7nqaUICJ+mf+Jk/0irePnwA3D7pxMjINVq0tm2AY5PgkKCA07DzDZh18L1M/clm7NWSeZGr58NcJSkz2KuoV5DXujNXACGcnRMWx3euQd9qoPcAAkeBasYrbvq7064uSpdruXl/IUWHZ7ulCPGnpAW0p7Q3ku9O3zrgpHzMlo2SA0XlB+ChpYzhA1pyQZsA1BIgjW3cxnry891auyWkg7Rc5hVYuwTw2dQf9AW1VQ4SMeCxpNo0m5MpyrnPMKXPb8ZZ3fdgU6xz0bJfJ1QgokrwjpwFmI61AXgnDNnlw5Svqc65tEKPX/SR6mntvGb4TBc/NMwcUr4hEahDc4sVgB8bbTfKQPPt566fQU/QA/y2BfNf81c8b4FZzylyop5tBRtkA05vFvGz3xae6D94H6sV+MEIgzt4wMq5BM7L/pYwcwASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9zDMGf0W8gc5dL/sfDWE6gjhTb/ytTG24cIovYl8jfyl6h0KEZLPrMlVUJl3GWgqehkPNqErZOxGdhnxYCVo+PAj7sVgaW0PSpT45fJDdsGqYOHvTAwT7t3r8O6mdEDxaYRJXlB09T95JDGtSkvSbj8/LAcCwW8+3zYMpfisgG+m11KryMI1bNEsVEZDLqZo723rIuSqZWbD/NDK+6inlNYJQ4Uq+iYzZjvCmujeiA/cWWAnGgaUKIPX4xE83pZNkmU9Qih7DOChRSWN8aYrr8Fv9QMQBz54WRnZMx/R7vUlh/5cZP4CtLkbrZ3ouewBYY/IF7soeGHRFuxKqGCkQSeSs0TYrYeUGoSsQKmJJXQKxvY+KzGFJm7NctdYFfqSePzmDl5jnVbPlqyLowMgXecE504Om0JNCn0vL6F3yM4kk7KaUwuVxZCbl+ThjaKhRhHeNjPZFVymedAMCKiYAA0mvbAZbGFqeRGux0XbkD77Kad32kU2aC8gt9xyVnZzQvbrBz1GYiwrs5OpJuwfCj6y0kUDfpFs5JGI/D9wqtCuqG5Ahf78qADjP9igicjID4v3gqYm36u8D/kM0tR4F+MZYGrquF3RhIZbxhg3NDJtxDjdPhd1YpLnkRii2N+CG274nrzezO+gwfmUQ+XlebyP7picM50sgQCfuHO205Sr59m1deBKiDV46ddPHvf7OS1DS"
+}
+2025-09-05 08:55:23,139 INFO: Session created: session_id=CSE220E91F93FB9BCE95DD2FA
+2025-09-05 08:55:23,140 INFO: 127.0.0.1 - - [05/Sep/2025 08:55:23] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 08:55:23,165 INFO: 127.0.0.1 - - [05/Sep/2025 08:55:23] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:55:45,625 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:55:45,628 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 08:55:45,628 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_ad56d26b",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 08:55:45,820 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:55:45+02:00",
+  "id": "CS4F02B8D4C6816AC5ECBE2E7",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_ad56d26b",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAa5tdFZmA29FtbIOsAPzLbGb6bxL9zrYbzlduNIuo1Ypd8Lwo9gqz8rTE6zw4OlddK9hVnzkMfzarqXkA/LP5Wd7/JGV1BmJZzriGJ3SA5LEN+zBqEeOK7vOJNoGuFI+2j90fVNpzKHE61RYIMeLoiZ6E5ugIU6bQ4g3oZ/0WIzVc3OH0edHEyN+eoF7rwJjsOILkA9xyiKOY0yPxNFYIfMRdM1KADcfvOVRmiKYaBQh4DRtuVu9NWpOvy/bwdGHc4s0Ch4VPDLGOORpiXrg4bR5zHVMdaxP5AcIZ/HbN41uka84VLAAuG2ONhpGUBb6opF/9y1B7qR727bfRVLqp//99uduIQMSncox/4Kh2HS86tnIaQQYORz+/DtdW98VRudk71EmjcNpzpeUcQ3Ir4cwkGJlOUXU0K8OUJoy8ww6PDRLGAo64c+co5F3uVxZhl9VzEAO35LawoMnbSvzk0HMqjEjwpmq2IFV/L5JAuUXOVqFef/419iUd79l80IEIb2wxtUvLUdnnd9X6f3zrsyE4btPrk3k660W2lKKQsaI7a4OM6ZcvPN19OgDc/kFuRZ9RUFNTIge3hPebSEDjjroYabqatp4GPR1+i6Pt0mVa9lmCpMfMysTpUbHSOEQgc/FQE0lKbPUROiU7N2gIAxe9wr3JVlCKddirvVqzwfQwpI8DqG8bMNVm6kWAASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9oahg6kRHPEqWHjdB7aN9FP+dauqW9He2IkRPdkxibFyZ6odqyuhHFli69aVJCaL1r4zzf19L0oV1XVEJ0sqHSuxztFfQyQEjBZx4/QVn/6nyo6ObFDNyUk4jlIfo31VrKC2O4ywf/nSjrEeE8MRaYnQGYpqapOks4E/mXWS6cSdgQMcp6gKX3XjnjVKeto8HnyWeAtjkCteAzbVY8T0Mg+stfjbPH6BQ1/6/jVSesGEb7sfQmAAVyZNCnutbumtawoqqu/j0MQpb/F0DTrYcdodvORvJFtGL+VNux0r8V+aGEFa199fmx+QEWAw64xHokEdCYTSXrXFoFvjv6BTyKXsp4swuSL0e4xxHYBURUPjZMyZB2ff5xMItp92bRI2UBx8ToDcCZ2rlBfDl4mgqmgINtRPJQjuvqwy5WAbeUXboqKTa2TEti+wBAaQhGUa/0oGpOpDxhUPrIGmmeMHeCO17AApEMNy+433R5TRZechkdcjdincnRs15AfFAb0/RLXV8OijPUIAnpGM0G7qZkg427PGoAX6SdfhEqZ0tXU83+AyvbhxDxlqQUmWog1IB03InIPF46tlRulYwbrj41jjjD9/vQgk5jdvWYwzj3E9eLA2MjyKOZz+lX3/yZpt24vnpQVVCORwOQFquBtqKtisFIDORclHrX0jtak1HuhTxFkigEZxQoMV9P6Y8OTi7F7sbyAo="
+}
+2025-09-05 08:55:45,821 INFO: Session created: session_id=CS4F02B8D4C6816AC5ECBE2E7
+2025-09-05 08:55:45,821 INFO: 127.0.0.1 - - [05/Sep/2025 08:55:45] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 08:55:45,845 INFO: 127.0.0.1 - - [05/Sep/2025 08:55:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:16,885 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:16] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:16,929 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:16] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:18,644 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:18,684 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:26,700 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:26,738 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:56:28,792 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:56:28,795 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 08:56:28,795 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_2b83e2ad",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 08:56:29,025 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T09:56:29+02:00",
+  "id": "CS29742ECB6E7ABB8677D4278",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_2b83e2ad",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgADxpIPeu57iQsXrvDoewhycDsjwIXISW79eHZBaMMx/+s9EzYoySS0ozAlPV8HavYjEiXb7TwuAmwcCoJYa3SF0g6ruuFXkPRpiKj4+JcGbN1hrO5rICF+AYNpypFC90+CngiOD8AZbTovvL5wZGdSJtkBtwH4SEh6SavB2kWU/IRWqRMkiMb6iiD+Mo8fYaPiPyBo2qrBtjGhzVYJJDN7Wn8rgpM8GGysMywx6H6JxE3D9jM7QCpoTt1FSxSAW534O6HX6/SOc4lBoWVtEm3o8E/zPNAMZIDLWhkyJn/c1cjof3s6YSvYqeDmtIKdIzzhyvwlP1s4vCivxo0aJFbgrs5KALGyQ9emu+qOLPmMovqny+/y8jqbOFv879xVZ5PSALDN75Lpkhpcm8L+jmrTWrfFG30BHdkN9pnWbSyKxfnAEcKdnIQH/oXboQD1OxnMkaPa1tz+nDDmwced8+mcZnkcdazwQqbPzPDK3kxf+er6ia0hg/EsblwYByZd84FdIE6uoi2C0oX/sr4XdSCVUYriC/BSpN4JbVghtouRn9m9xe4POr6wcpQgK/tlbObst9MxSLBw3+W+6ySjOVz7XrUSbZFhwEa1oqt1LajH8XfFKMoTYJkeaTc/5j8oXf9p3lxyu6BAvwFZ36x3Hb561o0c49D0YC1PVqSn6yISTQwlXlXDlKcJ6wgK9K0ASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9zae6DqGX0p/cEBVXKsMiflycxwzQIiRaMlxeH/l0M9SjHZvu+3HAKVHd2NweSwxPrtZKYJ9z/rDjm733pGGXONE0Tv4WgLa3xYrQQ/5gybYrUNB9Jn7qwv5hMWtj5Lcv+lkCZ0MDNkOxsbc1R1HhWt2Sz4/SndxxszK2yAymj4vRc3RFVKHewvlfo6V6CXsjDOJcRG4U3d8cSD/Hr1EnkhnCqPfkMyKywN3h7IjLTm7q3xsVUNNVFF5qJaUdfYBKG1LO4rpcrhZnuljMSXB5YcMGdBPJuvBH6Hh/qAI9ivcYQiVNXsGY1RQMbPdlGfFS63uOvfgwkvgcOeUv7LZ91DXeKs8q7bGEaPAcg9hlI3JDBbNFRZospVuDPFrKIuFJcX9/nryVZQbQixs5CnAIsWPBfsEEOjYLptCW0uvlH+gDt2AzCFgbuB7/+u86iiZYCRLk91RhG7aC1hSUnfKvpeBO5FDlV2uzjUJOY09K6vdURq7Rtb3mDsPGDE4jg30ffO75N7VGbDz9s2sW4kRxPxlhmwghBEwiLdIG4P/eAOOwAlLJU4ivKJEMLWlwtnLmuuvNcU5laTVn3nGg2kArPACKAEuF+OLF+OQrOCJKBysyoA6nJTJYAwNzRANu3QwJpTQj4e/wrWo3cp62IiZgdQkMMBjP5FUrlN/G+/f5HRo6CXsXDAeV72Z6nxzHqMGQICaL9EQ1"
+}
+2025-09-05 08:56:29,026 INFO: Session created: session_id=CS29742ECB6E7ABB8677D4278
+2025-09-05 08:56:29,027 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:29] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 08:56:29,059 INFO: 127.0.0.1 - - [05/Sep/2025 08:56:29] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 08:57:14,177 INFO: Redirect to result page for paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 08:57:14,180 INFO: 127.0.0.1 - - [05/Sep/2025 08:57:14] "GET /result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1&sessionId=CS29742ECB6E7ABB8677D4278&redirectResult=X3XtfGC9!H4sIAAAAAAAA%2F41T%2FW+jOBD9X%2Fi5ZLGNMUQ6rQgfab6abGnS7GmlyDGTBi0xrHHay636v5+dJmr3PqSTkMDD85uZN29+OkIB11DG2uk72MPU9SLXow9e0KfmIb87N46CslIg9IKfDiB1yjV3+j8dLn4cTVzFQjRHqUel06ce80Jy4%2FCDjViQOCoFUpwM+2J6Z8ieeX0Ep88Cz3s1wLZageqqRpoQunG2issyaUqDcBpZVxIGXH6v5NNmMTWXxR7E9+aokz2XEmoDeoStjdt06nS5eIYeQAmD0pfqTDguTyAvR4xJlsxnH3D3sANbqSXQ0GkXUX+DtyEBzEuDa1T1VEleL7r2I3Q8DsnD6gvJ89kkHDBqkC2v76E71vpv0Ml6slp9iVKyZutbeoYq+HE0ueKyrLTRgNdXba+NFtBZcXrd29tq7CQFjpiPs2QQZCweDMKAsdTHLPwgUK%2FbN20LKmnk85u+%2F%2F%2Fq9SPWGg7tea6OH4gtgsh3uSnc9TknLveJ7woseBSVDAkWIUaZRwOKsM884vk+zRHzwzyJKcsHaZ5FOKceTXISZnGK8yjyktxHUe4FGQ1xmAQBwwnOCEpTZgridd28kLTAdiLKmOZ9WCOp4Ulxq1nv+eofh6FzG1drEHJWuDX+dhvp6uoApivzY8fr7r%2FY9Km1s0pus2QyXz5siqwoRvO7M5M+KnnZgRnofVN2IzlXJahrga9X1FLZAvZat13%2F26dvn66SXqbiWoP1uPVjTzSHf%2Fx%2FD1zS3Z9ZPz+1VfnbcBGhzIyMZj6iRldqjdRBbRYUyoHdn3%2FfnQu3bVZxod8ky0x6KwO8A6aN4LXVAKS7LGzccFw2qz1ue8+4N%2FTHxTB6XBc4fbwtHmhvQ%2F+MT8nL7Xj3B0xHd2Mv2perF0zX87Uo8H447%2Fh2COvTS7P8RaQFV%2FzQWcOny9ks+7qZZF9NmsthFU+XmcVrU7Dp47oc9ggtN3tlp+l5roCS7RAJBCE+CbcCdgyhrcAoDAUNOXPZLgoRhEGJohIICV0POa+vfwGVpzcZ%2FQQAAA%3D%3D4EP9RI1jbp2IVw9pI2NHROwlz97DhPPb17iORO70TT0%3D HTTP/1.1" 200 -
+2025-09-05 08:57:14,266 INFO: 127.0.0.1 - - [05/Sep/2025 08:57:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-05 09:07:07,055 INFO: Accessing checkout page with paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1
+2025-09-05 09:07:07,056 INFO: Payment details: ID=02ee0cd0-b744-4eca-84c5-4a187bb136e1, Amount=7600, Currency=PLN, Reference=test-154, Country=PL, Status=pending, Expires=2025-09-06 08:52:25.199878
+2025-09-05 09:07:07,057 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-154_fca8de6c",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "countryCode": "PL"
+}
+2025-09-05 09:07:07,192 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-05T10:07:07+02:00",
+  "id": "CS5295E2C9D71DA80DB6CB272",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-154_fca8de6c",
+  "returnUrl": "http://127.0.0.1:5000/result?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCZ95+EMwB9VJ5az0VY161sE+TKM05xZb+PBlcCU7b4W9l8HDe+GISD2Q8v1Mia5h+oqRDkQ7chasDX72o0JloPsqxY/zCAN2HnMYKdZMXHJUrnNQ34bOBezms88xo7gjdIeKW9jGzvtOxNWXfj/IJIdkmqW192vMgSxJoynT8nD8pQ9txAvKfloArikjlY71LMbMSXuzS0/B3pPukrJgiiwjAZnNJ+SVLOou9wiWHb9RATHbzCYl6J/8/wPeIpY9Yny6ENBzqrstGgQsM8/mtGoNdHkO+a2+zYOmoF+VDFxpSHxFKeCuthYnybNt2tE++ZhsJLOGG6fdFR4oQ2L1RPOSKCOKoZigmh81Apq8PJJ1F8YWIo4OlPkGjskX4tPqm/buS/NucC0NUUPUYfw3k47sEHLsPtN9PGPgRSHTRMAU2ul/e4kpxdiK8rPVLwmX85+/6XzZdSTDC6SDg3T8KAV+OEhi77LEFXx52Y4VJICPyT+HmxRV0suiDnMCJG4j7Wm7uPh8lTMQy4np4xH7pNNraM4dW9y4D5rEU5gyCYyG44AeECvlXmZ22UZBDlHPIrJbfVmbxiq/QNFUJcIg8M0Yl1eEqP3KdznsZ5M+C8eJBHgW7+NEy2/5MWYFmNGSHZHm727nelUmnHm5+EE3XB4n1CfwjvbOZOwKfEm4/OfAzEdk0YusJnFC0zP5AASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ97AfIWEGe/LCiRGBIGpPgDRNSZM8CIaCoHywuw3h4KL2N/rAfTv13QH/d43g1SUgvnPcz89dAJsoKmye3feqDl7dbIoOoVc0dpJFESmXEEzej7Z5vhkKsA+m4rxNDkkibL5LSMEf8zlAtaZRUUZx7jHI1+fQ+mJfieyyxtNlw1eLcVfHDjL9vRlhUdktfdHmKv7PoxzimDk4R0Z5mOaOC2BmP6DhquzOuTiVm+6yhiV6TIbgmG/pDR8gqU2eUlgznpmxOPJczHiRXbCyygqLfLSX15IMrxNbNVRJyGgcDLxzl5m+KgXWtJs78+kHjgd+dzh4N6wF21m3kNXZ+QETi+HewlvkONmNG9IDSqd9a9p+MnAuNPDLrM4iZvP7BMMEdMViEhFhLUNfvVUU6knb6p4JHD68W6vvdYwK4tuGRpsC5FUNLIHdp2M+jYfVZKIi+2RJwCknKsNUDr7lb+YYbENKaJ/uAhoyj51dw/ZtapkFoK3GG/qQ0OQF1jxke7SQyfRrSyQvdPElaQ1sptoez7/A0mFZ6OxhxWHjFXSaf7gtz3+ITNw9J71IKH7oacp3+JOixPQ6bG63sXTDcmwuIbKl4K2ynS/Z0Ntne9GINt+AmA9+4vtMLhtSLqtj8/zSb4rQtnttu3849JX0eR/pl955F9pUbgolO0ItQLi+WnLHUf57Hw050t8eRhHhyKyAROLJEhkuf"
+}
+2025-09-05 09:07:07,192 INFO: Session created: session_id=CS5295E2C9D71DA80DB6CB272
+2025-09-05 09:07:07,193 INFO: 127.0.0.1 - - [05/Sep/2025 09:07:07] "GET /checkout?paymentId=02ee0cd0-b744-4eca-84c5-4a187bb136e1 HTTP/1.1" 200 -
+2025-09-05 09:07:07,217 INFO: 127.0.0.1 - - [05/Sep/2025 09:07:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -

@@ -1,0 +1,4 @@
+Flask==2.2.5
+Adyen==13.4.0
+Flask-Mail
+python-dotenv

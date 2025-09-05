@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <title>Checkout</title>
+    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/5.67.0/adyen.js"></script>
+    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/5.67.0/adyen.css"> -->
+ <script src="https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/sdk/6.11.0/adyen.js"
+     integrity="sha384-wwiuyx0VwdDwaHvlLtdCKeUuFCNIMDrWrQI24PdEMMMGgOZPHirMZfXHNgrk6DG5"
+     crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+        href="https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/sdk/6.11.0/adyen.css"
+        integrity="sha384-grpuyJ9vAlVrx/mBLXLO3V2f9W3m5KKYx34MzigvvPqArvi0WqWoD/Pl++yf15EU"
+        crossorigin="anonymous">
+</head>
+<body>
+    <h1>Complete Your Payment</h1>
+    <div id="dropin-container"></div>
+    
+    <script>
+        async function initCheckout() {
+            const configuration = {
+                environment: 'test',
+                clientKey: '{{ client_key }}',
+                session: {
+                    id: '{{ session_id }}',
+                    sessionData: '{{ session_data }}'
+                },
+                onPaymentCompleted: (result, component) => {
+                    console.log(result);
+                    //window.location.href = '/result?paymentId=' + new URLSearchParams(window.location.search).get('paymentId');
+                     //handleOnPaymentCompleted(result, component);
+                     return result
+                },
+                onPaymentFailed: (result, component) => {
+                    console.info("onPaymentFailed", result, component);
+                    handleOnPaymentFailed(result, component);
+                },
+                onError: (error, component) => {
+                    console.error(error);
+                }
+            };
+            
+            const checkout = await AdyenWeb.AdyenCheckout(configuration);        
+            const dropin = new AdyenWeb.Dropin(checkout).mount("#dropin-container");
+        }
+        
+        initCheckout();
+    </script>
+</body>
+</html>
