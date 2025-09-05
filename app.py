@@ -18,8 +18,9 @@ from urllib.parse import urlencode, urljoin
 # No trailing slash needed.
 # -------------------------------------------------
 load_dotenv()
-BASE_URL = (os.getenv("BASE_URL") or "http://localhost:5000").rstrip("/")
 
+BASE_URL = (os.getenv("BASE_URL") or "http://localhost:5000").rstrip("/")
+#BASE_URL = "http://localhost:5000"
 def abs_url(path: str, **query):
     """Build an absolute URL using BASE_URL and optional query params."""
     url = urljoin(f"{BASE_URL}/", path.lstrip("/"))
