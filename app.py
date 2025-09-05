@@ -49,6 +49,8 @@ adyen.checkout.client.platform = 'test'  # Change to 'live' for production
 MERCHANT_ACCOUNT = os.getenv('ADYEN_MERCHANT_ACCOUNT')
 CLIENT_KEY = os.getenv('ADYEN_CLIENT_KEY')
 HMAC_KEY = os.getenv('ADYEN_HMAC_KEY')
+SKIP_HMAC_VALIDATION = (os.getenv("SKIP_HMAC_VALIDATION", "false").lower() == "true")
+
 
 logger.info(f"Adyen API Key: {str(os.getenv('ADYEN_API_KEY') or '')[:4]}**** (masked)")
 logger.info(f"Merchant Account: {MERCHANT_ACCOUNT}")
@@ -187,57 +189,68 @@ def result_page():
 @app.route('/webhook', methods=['POST'])
 def webhook():
     logger.info("Received webhook request")
-    payload = request.get_data()
-    signature = request.headers.get('hmac-signature', '')
-    
-    logger.debug(f"Webhook payload: {payload}")
-    logger.debug(f"Webhook HMAC signature: {signature}")
-    
-    # Verify HMAC
-    computed_signature = base64.b64encode(
-        hmac.new(
-            HMAC_KEY.encode('utf-8'),
-            payload,
-            hashlib.sha256
-        ).digest()
-    ).decode('utf-8')
-    
-    if not hmac.compare_digest(computed_signature, signature):
-        logger.error("Invalid HMAC signature")
-        return jsonify({"error": "Invalid HMAC signature"}), 401
-    
+    # Always use the raw bytes for potential future signature checks
+    payload = request.get_data(cache=False)  # bytes
+
+    if SKIP_HMAC_VALIDATION:
+        logger.warning("SKIPPING HMAC VALIDATION (SKIP_HMAC_VALIDATION=true)")
+    else:
+        # --- normal HMAC validation (kept here, but guarded) ---
+        signature = (
+            request.headers.get('Hmac-Signature')
+            or request.headers.get('hmac-signature')
+            or request.headers.get('HMAC-Signature')
+            or ''
+        )
+
+        # Load/prepare the HMAC key (base64 in Adyen CA)
+        raw_hmac_key = os.getenv('HMAC_KEY') or ''
+        try:
+            HMAC_KEY_BYTES = base64.b64decode(raw_hmac_key)
+        except Exception:
+            HMAC_KEY_BYTES = raw_hmac_key.encode('utf-8')
+
+        computed_signature = base64.b64encode(
+            hmac.new(HMAC_KEY_BYTES, payload, hashlib.sha256).digest()
+        ).decode('utf-8')
+
+        if not hmac.compare_digest(computed_signature, signature):
+            logger.error("Invalid HMAC signature")
+            return jsonify({"error": "Invalid HMAC signature"}), 401
+
+    # If we’re here, either HMAC is skipped or valid — process the body
     try:
-        data = json.loads(payload)
-        logger.debug(f"Webhook data: {json.dumps(data, indent=2)}")
-        
-        # Process notifications
+        data = json.loads(payload.decode('utf-8'))
+        logger.debug(f"Webhook JSON: {json.dumps(data, indent=2)}")
+
         for notification in data.get('notificationItems', []):
-            item = notification['NotificationRequestItem']
-            if item['eventCode'] == 'AUTHORISATION' and item['success'] == 'true':
-                session_reference = item['merchantReference']
-                # Extract original reference (before the UUID suffix)
-                original_reference = session_reference.split('_')[0]
-                
-                logger.info(f"Processing AUTHORISATION webhook for session_reference={session_reference}, original_reference={original_reference}")
-                
+            item = notification.get('NotificationRequestItem', {})
+            if item.get('eventCode') == 'AUTHORISATION' and str(item.get('success')).lower() == 'true':
+                session_reference = item.get('merchantReference', '')
+                original_reference = session_reference.split('_')[0] if '_' in session_reference else session_reference
+
+                logger.info(f"AUTHORISATION success for reference={original_reference}")
+
                 conn = sqlite3.connect(DB_NAME)
                 cursor = conn.cursor()
                 cursor.execute('SELECT status FROM payments WHERE reference = ?', (original_reference,))
-                payment = cursor.fetchone()
-                
-                if payment and payment[0] == 'pending':
-                    cursor.execute('UPDATE payments SET status = ? WHERE reference = ?', ('paid', original_reference))
+                row = cursor.fetchone()
+                if row and row[0] == 'pending':
+                    cursor.execute('UPDATE payments SET status=? WHERE reference=?', ('paid', original_reference))
                     conn.commit()
-                    logger.info(f"Updated payment status to 'paid' for reference={original_reference}")
+                    logger.info(f"Updated payment to PAID for reference={original_reference}")
                 else:
-                    logger.warning(f"Payment already processed or not found for reference={original_reference}")
-                
+                    logger.warning(f"No pending payment found for reference={original_reference}")
                 conn.close()
-        
-        return '[accepted]', 202
+
+        # IMPORTANT: Reply 2xx (Adyen expects 200/204 within 10s)
+        return '[accepted]', 200
+
     except Exception as e:
-        logger.error(f"Error processing webhook: {str(e)}", exc_info=True)
+        logger.exception(f"Error processing webhook: {e}")
+        # During development you can still return 200 to stop retries; keep 500 if you want retries
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == '__main__':
     logger.info("Starting Flask application")
