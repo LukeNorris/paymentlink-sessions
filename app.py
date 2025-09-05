@@ -10,6 +10,22 @@ import hmac
 import hashlib
 import base64
 import json
+from urllib.parse import urlencode, urljoin
+
+# -------------------------------------------------
+# Base URL config (single source of truth)
+# Prefer env var; falls back to localhost.
+# No trailing slash needed.
+# -------------------------------------------------
+load_dotenv()
+BASE_URL = (os.getenv("BASE_URL") or "http://localhost:5000").rstrip("/")
+
+def abs_url(path: str, **query):
+    """Build an absolute URL using BASE_URL and optional query params."""
+    url = urljoin(f"{BASE_URL}/", path.lstrip("/"))
+    if query:
+        return f"{url}?{urlencode(query)}"
+    return url
 
 # Configure logging
 logging.basicConfig(
@@ -22,8 +38,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-load_dotenv()
-
 app = Flask(__name__)
 
 # Adyen configuration
@@ -35,10 +49,11 @@ MERCHANT_ACCOUNT = os.getenv('ADYEN_MERCHANT_ACCOUNT')
 CLIENT_KEY = os.getenv('ADYEN_CLIENT_KEY')
 HMAC_KEY = os.getenv('ADYEN_HMAC_KEY')
 
-logger.info(f"Adyen API Key: {os.getenv('ADYEN_API_KEY')[:4]}**** (masked)")
+logger.info(f"Adyen API Key: {str(os.getenv('ADYEN_API_KEY') or '')[:4]}**** (masked)")
 logger.info(f"Merchant Account: {MERCHANT_ACCOUNT}")
-logger.info(f"Client Key: {CLIENT_KEY[:4]}**** (masked)")
-logger.info(f"HMAC Key: {HMAC_KEY[:4]}**** (masked)")
+logger.info(f"Client Key: {str(CLIENT_KEY or '')[:4]}**** (masked)")
+logger.info(f"HMAC Key: {str(HMAC_KEY or '')[:4]}**** (masked)")
+logger.info(f"BASE_URL: {BASE_URL}")
 
 # Database setup
 DB_NAME = 'payments.db'
@@ -94,7 +109,7 @@ def admin_form():
                 return jsonify({"error": "Reference must be unique"}), 400
             conn.close()
             
-            checkout_url = f"http://127.0.0.1:5000/checkout?paymentId={payment_id}"
+            checkout_url = abs_url("/checkout", paymentId=payment_id)
             logger.info(f"Generated checkout URL: {checkout_url}")
             
             return jsonify({"message": "Payment link generated", "url": checkout_url})
@@ -140,7 +155,7 @@ def checkout_page():
             "amount": {"value": amount, "currency": currency},
             "reference": session_reference,
             "merchantAccount": MERCHANT_ACCOUNT,
-            "returnUrl": f"http://127.0.0.1:5000/result?paymentId={payment_id}",
+            "returnUrl": abs_url("/result", paymentId=payment_id),
             "countryCode": country
         }
         

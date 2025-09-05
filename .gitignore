@@ -1,1 +1,6 @@
+venv/
+*.pyc
+__pycache__/
+payments.db
 .env
+app.log
