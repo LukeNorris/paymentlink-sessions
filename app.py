@@ -10,6 +10,7 @@ import sqlite3  # only used to catch IntegrityError from db.create_payment_recor
 import hmac
 import hashlib
 import base64
+import threading
 from datetime import datetime, timedelta
 
 from flask import Flask, render_template, request, jsonify
@@ -30,8 +31,10 @@ from db import (
 load_dotenv()
 
 BASE_URL = (os.getenv("BASE_URL") or "http://localhost:5000").rstrip("/")
-# Optional: if you later add a scheduler to unlock stale "processing" links
-PROCESSING_LOCK_MINUTES = int(os.getenv("PROCESSING_LOCK_MINUTES", "8"))
+
+# Hold duration while waiting for webhook (minutes). Set to 2 for your use case.
+PROCESSING_LOCK_MINUTES = int(os.getenv("PROCESSING_LOCK_MINUTES", "2"))
+PROCESSING_HOLD_SECONDS = PROCESSING_LOCK_MINUTES * 60
 
 MERCHANT_ACCOUNT = os.getenv("ADYEN_MERCHANT_ACCOUNT")
 CLIENT_KEY = os.getenv("ADYEN_CLIENT_KEY")  # used by frontend checkout.html
@@ -50,6 +53,7 @@ logger = logging.getLogger(__name__)
 
 logger.info(f"BASE_URL: {BASE_URL}")
 logger.info(f"Merchant Account: {MERCHANT_ACCOUNT}")
+logger.info(f"PROCESSING_LOCK_MINUTES: {PROCESSING_LOCK_MINUTES}")
 
 # -------------------------------------------------
 # Flask app + Adyen client
@@ -65,6 +69,33 @@ adyen.checkout.client.platform = "test"  # set to 'live' when you go to producti
 # Database bootstrapping
 # -------------------------------------------------
 init_db()
+
+# -------------------------------------------------
+# Helper: schedule automatic unlock of 'processing'
+# -------------------------------------------------
+def schedule_processing_unlock(payment_id: str):
+    """
+    After PROCESSING_HOLD_SECONDS, flip status back to 'pending'
+    if (and only if) it is still 'processing'. The webhook can override anytime.
+    """
+    def _unlock():
+        try:
+            payment = get_payment_by_id(payment_id)
+            if not payment:
+                return
+            _id, _amt, _cur, _ref, status, _ctry, _exp = payment
+            if status == "processing":
+                update_status_by_id(payment_id, "pending")
+                logger.info("Auto-unlock: set status=pending for paymentId=%s (timer elapsed)", payment_id)
+            else:
+                logger.info("Auto-unlock skipped for %s (status now %s)", payment_id, status)
+        except Exception:
+            logger.exception("Auto-unlock timer failed for %s", payment_id)
+
+    t = threading.Timer(PROCESSING_HOLD_SECONDS, _unlock)
+    t.daemon = True  # don't block process exit
+    t.start()
+    logger.debug("Scheduled auto-unlock in %s seconds for paymentId=%s", PROCESSING_HOLD_SECONDS, payment_id)
 
 # -------------------------------------------------
 # Routes
@@ -168,8 +199,8 @@ def checkout_page():
 def result_page():
     """
     Shopper returns from redirect (Adyen returnUrl).
-    Immediately lock link (status=processing) to block duplicate attempts
-    while we wait for the webhook to confirm success/failure.
+    Set status=processing and schedule auto-unlock back to 'pending' after the hold window.
+    The webhook may arrive meanwhile and override with 'paid' (success) or 'pending' (failure).
     """
     payment_id = request.args.get("paymentId")
     logger.info(f"Redirect to result page for paymentId={payment_id}")
@@ -187,8 +218,9 @@ def result_page():
         if status == "pending":
             update_status_by_id(payment_id, "processing")
             logger.info("Set status=processing for paymentId=%s", payment_id)
+            schedule_processing_unlock(payment_id)
 
-        # Your template can poll /status to auto-update the UI when webhook lands
+        # Your template can poll /status to auto-update the UI when webhook lands or timer unlocks
         return render_template(
             "message.html",
             message="Thanks! We're confirming your payment. This page will update once it's completed."
@@ -217,7 +249,8 @@ def status_api():
 def webhook():
     """
     Adyen standard webhook (Checkout): processes notifications.
-    We currently handle AUTHORISATION to set link 'paid' or unlock back to 'pending'.
+    We handle AUTHORISATION to set link 'paid' on success or 'pending' on failure.
+    This overrides any in-flight 'processing' timer.
     """
     logger.info("Received webhook request")
     payload = request.get_data(cache=False)  # raw bytes
