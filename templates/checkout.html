@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <title>Checkout</title>
-    <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/5.67.0/adyen.js"></script>
-    <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/5.67.0/adyen.css"> -->
  <script src="https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/sdk/6.11.0/adyen.js"
      integrity="sha384-wwiuyx0VwdDwaHvlLtdCKeUuFCNIMDrWrQI24PdEMMMGgOZPHirMZfXHNgrk6DG5"
      crossorigin="anonymous"></script>
@@ -25,12 +22,18 @@
                     id: '{{ session_id }}',
                     sessionData: '{{ session_data }}'
                 },
-                onPaymentCompleted: (result, component) => {
+                onPaymentCompleted: async(result, component) => {
                     console.log(result);
-                    //window.location.href = '/result?paymentId=' + new URLSearchParams(window.location.search).get('paymentId');
-                     //handleOnPaymentCompleted(result, component);
-                     return result
-                },
+                    try {
+                        await fetch("/mark-processing", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ paymentId: '{{ payment_id }}' })
+                        });
+                    } catch (e) { /* ignore */ }
+                    // Show your "confirming payment" UI or redirect to /result to reuse that page
+                    window.location.href = `/result?paymentId=${encodeURIComponent('{{ payment_id }}')}`;
+                                },
                 onPaymentFailed: (result, component) => {
                     console.info("onPaymentFailed", result, component);
                     handleOnPaymentFailed(result, component);

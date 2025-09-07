@@ -928,3 +928,639 @@ sqlite3.OperationalError: table payments has no column named country
 2025-09-05 12:08:39,125 INFO: Starting Flask application
 2025-09-05 12:08:39,140 WARNING:  * Debugger is active!
 2025-09-05 12:08:39,189 INFO:  * Debugger PIN: 940-524-855
+2025-09-07 10:38:33,897 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 10:38:33,897 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 10:38:33,897 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 10:38:33,899 INFO: Initializing Adyen client
+2025-09-07 10:38:33,907 INFO: Starting Flask application
+2025-09-07 10:39:08,923 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-07 10:39:08,925 INFO: [33mPress CTRL+C to quit[0m
+2025-09-07 10:39:08,928 INFO:  * Restarting with stat
+2025-09-07 10:39:09,252 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 10:39:09,252 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 10:39:09,252 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 10:39:09,253 INFO: Initializing Adyen client
+2025-09-07 10:39:09,257 INFO: Starting Flask application
+2025-09-07 10:39:09,264 WARNING:  * Debugger is active!
+2025-09-07 10:39:09,311 INFO:  * Debugger PIN: 940-524-855
+2025-09-07 10:39:41,155 INFO: 127.0.0.1 - - [07/Sep/2025 10:39:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-07 10:39:45,076 INFO: 127.0.0.1 - - [07/Sep/2025 10:39:45] "GET /admin HTTP/1.1" 200 -
+2025-09-07 10:40:05,540 INFO: Processing admin form submission
+2025-09-07 10:40:05,544 INFO: Creating payment record: ID=1d3dd539-81ab-47ba-be34-7c6adfb3b45a Amount=7600 Currency=PLN Reference=test-11 Country=PL
+2025-09-07 10:40:05,549 INFO: Generated checkout URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com/checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:40:05,549 INFO: 127.0.0.1 - - [07/Sep/2025 10:40:05] "POST /admin HTTP/1.1" 200 -
+2025-09-07 10:42:06,359 INFO: Accessing checkout page with paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214
+2025-09-07 10:42:06,362 INFO: 127.0.0.1 - - [07/Sep/2025 10:42:06] "[31m[1mGET /checkout?paymentId=99f5a1f5-23d7-4886-9d47-f6b1580fc214 HTTP/1.1[0m" 403 -
+2025-09-07 10:42:06,468 INFO: 127.0.0.1 - - [07/Sep/2025 10:42:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-07 10:44:25,999 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:44:26,004 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_ced815cd",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:44:26,228 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:44:26+02:00",
+  "id": "CSF96C4A165F0557230080237",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_ced815cd",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCw2HRW+7yfaECiyGFTePStm4QdUUfBWG5WsSJGq/SF9fUPs06xaISTnYG0dPHiJmPe/WqW/HxGU17w+V7bRU4RgH9lXLNg0LD1eIMMoxvS+6LLVFjRgXoIo/xjUg8O4zTaiQGBk5FK+smwto5OD4zEvchbJRU6qTiMI9RMOiL668X5XyBRF+KGwNG6lZyOCXBhJoFRaoRRJcqSQ9HfP/BA/fDPzbPEDSoRVEVjpzCkSixJplJiYWseyJOuDg6Lvq3Div4OMCi3VeeE5QCPOHp7xIEYl4DMr8tKa5c0zMJKi4//R2vNXwuM6rO+73yN6UNBBhafi7m3hLjdBJvXnZGLVFfD29c1TLkgB5X2oWj6XOywrxImfcgc9Q2HROVXIiycLO4DBH33AaFDlJI6DO4FV1fUNyhO0/7EpMCIk/mwZY3vj0i9ZRUGipuDiYfoznaUIn059JK5zEV4WAR2UqIxsdF1AgdRMKy/MUoZcCOPL++EJwzVB4W6Jr8A8bXnZF6C8ou9HNjqP24kQtR8RIP52EZqGhcTdYS0P7b9lXf9GVJoyL3KUf6FzmenCsdaZrdK6Bt5abev7iER/6XMxJKHOoEdjVHRT5kbGmr1mrW9EthW2Ga8coNSW/0zdSuuycS+OvVo5i7NvkHRvcTF5YJgCfZuAWKGD9t542bSXwufBgxoNSkMQruSwPz8BT8ASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9EcG4LPE4UoIfvJ0UQkocOPt6ue0KS/ehwK/n88mbGIadVPFq6Dm2CyrUIvOceXqtrR/G92D2f33hN5DEweoVEoiMMcZM4T0K16rPOAN3yx36VIIh/VsKyjEHvgjQrylZ/B3Oe4HjAZnpETjNj81Yrj4JhojcIXrH+H5JFyZ/BmB7TePMaLdHIgdLmkkBCfu/EQw1ahV/7Wxk7C8P6a0RTqxLipokngwgqbUYPReR6agxf7225x4bkzGads27Xo+xsVKMbYgJyyxOYkzWKGvcgSpaa6A9n3zd4HGgJdesvItKF8LTXtuDAmY3tnAlw8LV/qNIvb3gs1ZL2vzvLYAhrkFkFe7szjAGDBeE2v3bUkb+j5jQpbQ6v44dxYTV1oc/kAkLBrfckyve3cMNR7tthMGpbuanA9ExRXbLxLuDVg4S+TRj5SjOZGSaEoD4n0TN8jyAcwxgszfwd0AzPf6VRTPZsJNmqRkQShh2f5hjLOWSFUfxfwnVVYHXaNATMkvPwj5wU2bEpqpsBMfs5uAHptQi1ePa3rPKNRCrNHRge9WPbFeL5nsqrK9JMAONFKaFc3lv0CISH4Wxu67xfjbe+Klxs5bG5z2Su6Q/tSMnkQ/CYG1l/TVNFR/a7sjFd44qz9XZ8Evtnbumuu1R90CfA7QTdHgdV7fe3n7bQ7mdG/grfpyXXpw5QpArP7KXjs6vYrn9Ihf2Kv/qKKGYcSoTmrbaEJPgJElNzFZz37QHDsEYCqeidvU="
+}
+2025-09-07 10:44:26,231 INFO: 127.0.0.1 - - [07/Sep/2025 10:44:26] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:44:26,248 INFO: 127.0.0.1 - - [07/Sep/2025 10:44:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:47:16,785 INFO: 127.0.0.1 - - [07/Sep/2025 10:47:16] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:47:18,194 INFO: 127.0.0.1 - - [07/Sep/2025 10:47:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:47:18,217 INFO: 127.0.0.1 - - [07/Sep/2025 10:47:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:47:30,623 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:47:30,625 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_ed59cee2",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:47:30,845 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:47:30+02:00",
+  "id": "CS8C6B81BA3E18BE45C7D227D",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_ed59cee2",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAwH1vaCDsgFaav11sHz/B8b1+aq7gZCEHg7RIVJIEZvm6Z8yghiCIHPyLLQjyy6Fip7u/KMYeQWX76lhnuG8tux11KvEXgQ7ihzvR5she0NenhfeQQ42Ed+XNFPxa0r6uhxnVG7jSLtnPI9rzLt+DGoGPvfTrRVpjI8pXX0gcoVIy30/Ar7+vCfZIpl0yACG6lKJ2XDTPlHrKYhTTyuFqq3NW1duDGRBUMf2rRUqMw5tFNmgAveNy0dBypuNcSF3/6tcfkodWciJlY2UzQKiL6X/HUPD/aS6EdRy+gIwA1vxGwvhARwzpCqh3If0iZGK4PY9NhuZTYYrAvjc9wBdiFqDmi+fd3jbSgOGdiRVX+Vox+KNwPhL87aq72NsB/svJvVxAM/3ymrnxVnK94fp+AULOKy7zvo8/n2/aBgX+1JXBjOOHaV3pmBODqO74X5KG2o/Nc6QbkYgcyzg2Xoo56NumlczSz4Sllg5gV/ARki4nfLNXM9lmPi027BWpAgH+dT5G5su98Bsr4z8StSHsCvjNrLg+2Z0/SvJGzhoMCdOVrKKfx7o3z4iYMqtd2wBURHswfurkfq3Au3qRL8MMA57jtxjrZBWwjW94J5umF5g+58Eo8wzRBdyoyYm6Hf8giHlKpNjsOnpA30yPHhzGCXHqQLsuPdaY4r5MjUyzCJAzs7fsHssSXcFFdlGYASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9aptYxIJ7x9tKiMGbSwxY/6Ps4mIzUNIJpLxbDShgmFAh/Y/mqTV+cAhTXjcU+da/qJPflGyx1RbCkOY/AjRwX9Eo8YiSwbfo0AXgXBxKlkroBqxFT/3F+uwVQvhbe7GrvxO7n19qbSxHBuILnmdeYBNGadmDw7cFDP30OtYoUXbNcBwQROoLYsWkAnKpNAqZKVI2PD3hVoZL43XKAJWyaL2MieECUfAqh5ypfBJkVZCSlbjUfREHb9cbVDhqTMnE6xyRJFZSry6SYEilMmELvytRasdbgRiJZ5ZrWT5Iz6oXYa9Nu3AIfG9ix2N+FJasKZrEWR+IeDjE1ma6PUe3jvE7OJ2H1Z5awh7fCcgp9raRhVTgUhA5LpKk7AZtVVMAEorrXX/ivs07KnKleybG7PX79mAIXKYRMoGZSZbWNVskG1lgMTkSlfWUG6PM08QnPqQHRFpk3L1qv1/L2EESKihCnV79SOxlzTG/ovWl4700ptMkV/SabPI8FVUJ/a/lI0yAJO6llq8YvBGp3n8VJ8ERS7n6FBQW8iuUqq0x9LEmBEOQna4eTWDPKL5/Vn7XseHbc7FYMv09s37naHRPL6DXOoOvtbdBETCNtkNCRDfPdIaHkdhaIxCJaHi2/hWD526UV0V5KpD05d88wRmhYagLkN+JjNHLp1D0uY68vYo+4F7/Sa4HHOFFo+scCon4ozCGvfRYmJgBvfCfE6bktWd0idTLJC6/Law1s2jE7SevBX1jlQ=="
+}
+2025-09-07 10:47:30,847 INFO: 127.0.0.1 - - [07/Sep/2025 10:47:30] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:47:30,871 INFO: 127.0.0.1 - - [07/Sep/2025 10:47:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:48:02,911 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:02] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:48:17,546 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:48:17,549 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_7b2edc76",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:48:17,715 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:48:17+02:00",
+  "id": "CS0AD987A4635DF1EC7BF5210",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_7b2edc76",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAQF6CiXSBQ98x5T68qEWSS2XzmpipQsQMzWLuncF6jf4zqIWBujZA/nZXXt0fQVF1N8PR0YmRLLh1gBAU4/qf7DkF2ohrE0k3LnBKeRSKHkZxTSl5OXZBzJU3jj48XZgZs6CUPeFfIgEyiwgNzaHwVud10VE2BcuOVvkIzmSHcNsm4Gv/mK27z39lFnFTCFLmM069LA5E76gwBH/GR4WKub7XaQKqmgQV+qdximUJQX1TdLReWO/Pa0+GET522KLYLpE8XTAq4gb6stfi8sHlY8zuqaQtosQVNnxUH7ANVr2RLCY7psgpJZoutxlmW/Q5PlC8lSuzphOaRuuT+UkNJp9TvrOHxhEZT/iSeGI1rK1H7+BTHSJpFnFPLcpW2f19ErYMYxQzXgi9k4Jo+s0Wn/AhFhKthqoAbpLsc/4oRLPbpkNPdfUKOy1qn8KGIbpYlfmSy5Y5yeMzv06uxtiDjd9e0lztjGYFoVFHCQ1/4zg/sZVuYw6zqLoeJR8hAgPdjcnjqlWz9dzYxPZ1r12KYCIsnI22jq4D9MCIe1GvxugDW4L4Y0oomj7G+POU2XquXaPYjXjYtxWEhS4ZKXOwNz9GJgsI43oG37BXkRMOwh8A02eIwV8oPoZjIc/DYszqWk619KKoUOvTIqJJuq+BKx9TM7Pj0wF0jJRUlDVEg5gzeBW5GMA6W7EvS6vYASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ93sPsBVJGmKh2+BkSitldsyUplcX54j01xkWUlzlT0zChJYQplNiiEjaCIgok8ebzWIH6UdVYwUFB+6tHg9zTLl50aoooybBDiNtV5gCqkjZV1W0CWDNPg/7deJYCoIN4XcUojCmCeiCz62GdCiFHg4DQe4aS4gXnL9lrAh84maCIRe7xDpbUTwotf2yjGxPH7LwJbFoKRa566ELpHk3C9ttxjxEJA0F27szLsOg0MwKnfld8avQXFlaLchIvXu9G98epV9PsbIRdMLUyQSZZlejesHbErq94DJixZJfMFR3cbgdoWdLjqX0l31I0mZ8lWodrCNXfpG8e6J10NbFDGKEZA6cWyUtum89XEb55JlDWYqao9OaeWvlJ5nS37yfPgiQNZy/xNWDpljU59ycg8LYVbpmlgJSodwwlrT/8dt6FSaUJIUGGvk1B2JWokrIKALfxrU9DypKK9GvQssoTpBGNUZd6WGV8yI9A/jIi+QFyx9/Id6nSMJfMnnXnY9E9DLn1U2xoa4HmdF1shR3p5IIb43Upw4oFQrC2GGBNHrEwsxA9StZZgGGTzKeQwl6lPqquh86sdKngPDfsHlLffa+ZbWxggbJ8zyYUxxLcoNphUf8zbCiaWI5UlUcDsoxQnGk9iQpl94MAyf0k1eQuJDFVbasEW7pqis4lKUtR7/8lYsXWPmApaIi5rWO1hcUn8QMhKUWtDwpiwpsUMeEkkZKD7++/7e/zw6IBzNogmk3mldSO"
+}
+2025-09-07 10:48:17,716 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:17] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:48:17,737 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:17] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:48:38,584 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:48:38,585 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_166cfb0a",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:48:38,801 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:48:38+02:00",
+  "id": "CS931C92294D9A107EBCF22F8",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_166cfb0a",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCafpUlKzvC3z+NC6Xisb1RWdBcuZa+2StB+2wCY+sE9gNZ/ZT8JU2tt6dfMY6Zvj4Hh9MEb6uHCLYonefS+/Zv4j+h5pHlsl2WMjwbhIKgcKokHKCeXYKmjy7arqO848kNra+GVig/gS92ZIU0OTWUIsJIhr8e/XDqy/sMi+5o1mPVqmLfRPoRdoRWpGcL1LCb00AIUvr5JFLivwjie5/qhRSSsVzfEforGB0uMsD6M1iLBezhHhkyqngN5NdIBZrCqvPWAOZaGhMRAvog297IUbEAW5orNi0hyL/bfWGFw2sl1p8+H8qnDZ+77tWw1tJ0xo2r1xWMkYw1GCCFDNPOYSpmNNiccNSaiE8IF+EWGnJQK6KE2BUTyHe4MHysfvT+n9alJNJk+o6fio91NXJ62Ns4a51OAmAT8gcgKHnV4jyYW5wGBnyOfHmCtcUj9lMgDrFYia/yOv4ntRvolh5uHprpsHYegp8u51nol9M8irhTWdb8P0tQLqmW6CIe8TgZT4cEHritWhDxwcMMImmMJmwL96dR+5T10kvly37sz9M/IN0cvSaGGehyZG26UU6bUZD34lf88J2xeIRm9JPfUkwTGJd4r+JBqmouPdz6JAaaNDQPHO52+dFUqkKdE4L0DHANO6ci2vJks/NcSrvR1/jhGyvS5liDIv76Hx70PwxyfhDzfhmU1sBdOUIASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9iQrxeYekQtOlDkMycG2dv7Y4jdwHqqxqDcU3HxOhSmxf01yz2CMlYPrt14mJzdVV0HSdvWzNc101o4ldLQRkz6gfT9oqe3xtq5uBrr022xdXHlPmbTTOxztPteVrv7sMo/mIoLZ6s2hL9MTWGWfaFz8E9HykR4QF7X4aGvGRU+kLGR3UJGF11JqZe8iZM2qaHzwZMtqpCape5jYlnpYb9VndbNPWLDbtTDzwEPtyKaPlvU7YxjPuujuET8vgpJumTRCfOE2pd2z3eeZMUCy3cE3HbyjJzBQIsy+3LTbCCTNp5SWTcmMXxjpE4KzhBueZyy/fb54ls4AZxUqC1EbJLPjWotz5i5sy30YufUDgagIisnfJZzPZYOQXAC/KMp4SPKYJe06nqoMBLZMTYtK95P0XfmjlKnjhYhgxhxzNwLDpVi34Z0e2WXDNyhXtBDzkOFILdcTb2sGLlY7ZhphNLJeQaGnwM2UgkhHxslw4v/HUlsRfKvxPY/a5cHkqvnpyis9MAYvLXrwPNFhJfTaPYqH58NrU8ezb0bbQZwoXfr7tPUaEOe0BY9ZsuNo2G1swngxlSU79sjT7XCyol6DwZxUki2bbUFxbf4w7k2olohY+8yx8bU/cgrpqBT7QOYtN9UsrB9luj95/wuwMDITWS+NuZDwZm2eFr7V5gORkYRsSPY900IIgYVxK5w8BbKKUEBSS1AVjDqCy6eI4SMELVK7Rt8uf2glEzo0/FVWfddFuxy4="
+}
+2025-09-07 10:48:38,802 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:38] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:48:38,821 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:38] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:48:41,364 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:48:41,367 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_5730c8f7",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:48:41,528 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:48:41+02:00",
+  "id": "CSFA7B3E35D2026C484E852FC",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_5730c8f7",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCuCMVSyyLfzNiUWZcZQ9Ay5kHCMBbd2yRO+LiN5tslBIg3JKnb+DT3h4BU5cZrRpZjdiDtENOQlA01cTCa2GuLNO4KXjoLLCr3sH1nQPnA7vUncL0qPX8H7t4VaIL5W0PBvFor0RmlaRC7G2mK2woy9OW7e9LSqB7/vzeeR4yjYqiYg3Wba3QSsVOeXHzxaqK2JVzHi/o6buCBJe0it+gRYrMdu2kntVxD2FAAKYVcVvYK5XR6s7RqZUSCsBgCDE0TCduQWvadmqgIItefmvuVwU2oiFVJTrPipQfO22Eew57sAIUvmv1kf0ngY9n6/nLXhWhEmv4r8eZRIhL0HxOik25yhlHrkRyzqHBwAtqevFpeoyejeBA/ac5cP9fimRGyPfzvB5L4DTc9uOHfmdAUqbT5YcIGvcTTL5C4Yu4ygQQ7xmcncUN77Rp8IljdrdzBuPFJzM/uzMGry2Cv86MksQOnKcLH/DSEYXZBe/400PTwyu6e5zuUi82lvpHPwHpcsDqClmKG2ip8K5pXB07BtqaSUyhCRS6wcYVK61QgjW7Q89RxjcMjMxy5IsMW1Jn7CRTUmBtF71Q5BvpMVQgJ6zNkCYo/szvXwsRm0WVcX91F1E13YTGyNn5xsi98cX1u2S03q7tCZ0uJl66mgUjMttY8m38WAbUqB+owM/dtyQyg9qyT+zMe1ex9CUQASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9dCECg3I4Ie8/gI3TTX7TVaMTCxjmD/j11QnMvUmI6+MgXjI37R9o11UkMG7g5Z8FD6QVhgxcBhpxGYxdSa5NtgbJn5J/TMHE0BctfupyU3YB1h7buAqKztDZhHPKwbfhEHCjF7ShST2hAuW/9WcNSStChBqkoHmM2BdblzVwJv7SFQiZ771BoatqlltPHhIUeAghlFhubNBAiU+nD8WTLXueJfAAOfM6s16hR5UGORxXDJlo0/YZ7IJ9WnNTUxbw46egZIzAeTqniKe/nv++rTJXRTzosoStZehzFOJLNbDgbIl9LLB2Lrz+ySAI7vhh0A3yA4w6MsL38+9rA05fe1jMXV4ii9P+5WOuu5/UKyL5eOpqBqNgDvMgULEvoQ3RLr4gmrmloPC9dwdJLySH95gsBsNR4P7jXKIkjkvSRCm1/nUNZCHf7/z/4DULc0sa46/y/eCABk8kBW+f5Ora1iLwQigR9HanxI7DkjAf1HjCW+ANpfLgjvXk5+jpQnuikbm798QVNOA6tPhje0LIv9bFAS6ObQJBwhZY+5sbAD+BG2pmWNvtI29Z3Z4EwJM5ZZZ2DKElEs0U/vQgKlpwDnIE3JYXDGSmFHvAsI2bKofRgxg0pwLI/3tZUMMSY2C0GjMvhibGB0UvlkK8bmvt2G0J4bSHgK4lwoxeU+f0kPbfeJ5xbndF+rqP3qyoKrW+kQwkNVl2Voe2purVmIy42qmQuDy5KnXzGcuuH9HrNQONCPs="
+}
+2025-09-07 10:48:41,530 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:41] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:48:41,560 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:48:53,825 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:48:53,832 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_4e274009",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:48:54,005 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:48:53+02:00",
+  "id": "CS2D98F49F84895C450427257",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_4e274009",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCB2pvuztqf4/TY3X6V8bosKV1ghXNtxd865KSbRP+A0LsqJxzeV8DkQnEHFGjEi+hJY0dt5//M8VUvQiY4xqbZYN0RcUZ2ZQPbg5bsXh5SNeTZlOGxmJPXJB1FmnSG0Hw6HsQxfOi3dK/GbZjt/tLU7hKLxBiFokvIvu6EMOiL51kDZ395jude7T3gpimvOJkMdbOQsNYMdGpupL7BKYoXFoAVp++wksUadJtT9grNAENkkW+StsEi9TXZH7do/Yo3STDwYis6///AQDJZ2ST+skQjpHqZYkHuqRTobgGMZNfXfq8/29pLg/F/pOt5T/HvRJ68M8l50pgmUZNwrVLUROVTtHqVDa8qOnhviwqEvz55sA31C7dAxyC24NQKH7iABLjO6PTWHGn46MJ6DSsTgPGchOtHrD5TOcta+XIxemJ+GkENFQP/9oJKHMFVIRI9hrHi2DschK47BugBRfbT3rS8sEn60fkJ7zXb2RjaJOUNkTdFuLf55/6mh5EH/hE8GeM2C8ubHruG+PITs8uawI1XK5rkdPRpgjJU98hW6ouMKf1UQ6vPTeLFwxx92IkelDt54zUWYaVochWkVrpLOFzn6uApsdBR7ATg2z0hkkplFCcNHbhxfgPmcApIdT5jBH7xs/bcv1WYremfQyaNVCsQM/EbT4SbsB2fkDS6Qgzq7MzimYYZiO+Uuo8ASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9xPJUCTI6+1dKicwE5OgKepcGA6wG362T0f3HXC6rz5hLgckM/SV4h16R9DlFz6PZf6mLRkyloYfT8JYjvKb2d2/UFLVndCdKDERVSOPlVkoXL5qGTMTMZRs74zOyZQpA99ZXoAjhVfONBTSsng1aD+nP4V4msUFgNs+zAw9J3fpMyJOBItlwwj8qFqRa9K5bAD7wP3moBi9DtS4Jb4odfiWwD4YWjLm4O52Q+zwIDgL0MIaqO0GfRhFMO7hd9SdoMxyDYgdY+zOQ+nL6ul4aT51HRRFUhMOD5sXc7bxUhxQBpyxbO4PtTBX6T9boKEpX5OYMEYVFAikaR4XkzyKaxmi2aS+/k8CguqTpGr+n90TVbBn8HZLSet11QVy9jpjcxxGufFoJbYZDMf/Unb+jjspuQfGJw2esvrUCfz+/RSG7eLSD42x5PHAB2krddaOc7b04I3/j61VEfjrtSXuQxSm8HQnnvIlOPuI8/pX/BjL3VeVia1FDnA5TdHow3KElaOJ551zIGLwIwJrn6di2ni4Ba4NieIaeeBz7ket2GPmhVOm+GlEbtPzZWty6OqworHbRW71glepB0ati9PEXNrLAQDNlsi5GMswBnyuOkI/PyRj3PJtnbfp4CMnqjHjiPl/WB9/BWfrtILOiWeaP74U8NA8HcKM+IwGb7tIzbm5fPAffdhmWo/LOYVE1wfkA7AKjrkZUXU6ERF98XXC3DfjJFef/Cvi0HOsEYD3x3jmqW7sIgQ=="
+}
+2025-09-07 10:48:54,007 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:54] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:48:54,039 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:48:55,493 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:48:55,496 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_cfe5afbd",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:48:55,649 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:48:55+02:00",
+  "id": "CS94C6C96BF21A5895C3C2286",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_cfe5afbd",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBGBgEMwxBqzCRm2Aneq6i+Ak6pHHcdt0YWbb+j8xPAxsbfLei9gzmhSrP9OtGo+jbWKOiGk5Ie4y3pqSmTTbPGeVz7C5lzWiz3+kKYCQB1ZrlVy34NoetGMQgPgycElLB+NPLZqMEONvmM8kEkg8Gz6+t2NxFgJ1EYUrwMs0vbqXHKBMQ6v7wsWb5mBrgH7yf5aAiBu3zRBlFNwY80ObWGUi53r0DOMjq0bbvFmNRHnEC0H5R6knz6wChKE5bP7I6j9A9bpZ4f+R3nnkiAFpa2eTh6+UPLKHNhJastsxzCj8Jk1vr+AU38TFqbuhwhFEv8bPMcTrPzFahEEGa0cBrlqgOjP0nvJyXwkbkJ4WfhDwNh2NLrLCudDBydhsKMFQ5VN7x9OpqYfJRLSyCfYj9mmRDKcX+cAuh/+Z5qI1sfVmLn7gm9NGRnBxKWPAl0tQBbObv8BM6EQjTDzqLXl8J4tx5ZeaZlU0kAq80jdxhLWIB/T7wbXgR/j7uWZjl58GKxoTe110QdoA6G27EqDwYFglTRtcXVq6ohECRHbAcA+6EIywo4wm0c+8HyTXHrCmqOV5B9ta4DoM3vr6Smx4AaxjICHJU1FCmPbLSpb6CPTaQ2kHo8armCROMheRK9kF5MS45lJLjPAOIq4CTthBktxy4zPoLJuKWvol1imj2FKwzftDCBKI+TZbjU62AASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9WFfXE3c1iXdCcPZI17KydhSg5uZboctbmchlN35a6PyXU/Q8f8D4+NSY8Q2dN6tf8DmQv26M0tyUszPSvxLHhGPDNh4bxf4q7XUiAEYM6xiJ5gbOC//nK/zh0kpeIZVG0hyQmcnmm9KsonFytk0FZQI3+ef7Vy2kgY5lW/SddRUxWrk59lUmVC5jwVdVTT3FZbNTCXhx3nEClANTcJmfzqC3gfSn5M7L1KJ/tGV7plbQUAsCDAfI6slskypUuUfcKnBt5k2NDLezO9P+IFvm1nhzlypAgE/5r2v4k3hoE/gjpIyaKpwlbGJPHXMydlVxhE8+DFDCWWn+XsDUUG2eDno9sYTVg9VaTBYH12/GWwKPn/9ZmhAHOFd4DjA5WkqekRQEY/K1Uahz5bDmAokz/kJdle2KasMH5Uu1R47mX+49hWmk0nXUyvDwfAVMN8H+RIs+pVISgd91pQtjwOX3IXBSqKmpuLZa0gFAVmHGmgm8Z2IX3bIbdaXtUfjwBAhIZxomtTMcQmotI1KDk7mpZSyd0Z5mDip/SvzBIOUALuLpV2vGWCXyB+QaTlaJMBN/qMwWgORnjWVFb3yY7sYCaxKGLLi0kKxhrM2l4sYfo9ppPBgB7b6pZ5n0RSWhwq2tTzBeDfWu5ixF7vFJm/C2WF5NNu5+h1/h4gLtPe3ZK62FfRm8yMBGeCY11294n9RNHl81IA98Bav1Cr5Am9X29FYB1OjosM4tqQwZDhCVPMhpmsgqMe0="
+}
+2025-09-07 10:48:55,650 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:55] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:48:55,675 INFO: 127.0.0.1 - - [07/Sep/2025 10:48:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:49:03,369 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:49:03,371 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_c0782a11",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:49:03,520 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:49:03+02:00",
+  "id": "CS43E633BF79E0DEE31CC1293",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_c0782a11",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBhcDgdEM9xsZYMc2PUSXT4lmAuf2WepK0uAmE0BpLy60vRktlrAQIRZieKI8BeRBWD12BjVFiXlwec4BtAKM5dYNGno3OPL9uWdtAef0fVdIeuYtf4QBTNCECniRAYbTknXBgBfu8GIxfJBtLajGB6HtZIbzizx4pTWOhWSCe/vN7FAtNzlfzeDAJ3HIoumij0I1g37xnF3w6GTX+h05pXqXpD6rIdbtUVcCYFauVoQCkHmExnBuxvj2L9Drz9fEFF/YUpOI9iyb2MluFlpL3+Wy5vF08fZkwibFJ11mRhrvBXafGuoHClyXV+fMzfCF4yn6Fr6jnHnBzvhBREK1NvT8SNDtYSB3rBHAydcY6ojpN9nrH4o5Uxl+VjdGAGWEKQTRKT1sRrjtB6mYbxkIYGm9dH1WwPb3H4XW17KRbxHrBM8sl96ePv8r+hNMT/CzXE4rN0HTfKHCynS0YQ/Eoiohm/aia4QNkJkgLeG1vdCpLAXN3+UaTLKgnLjL0mXbH08VAaihXuZcKWVC47cOJX1n4ZnAUmlPfYE0NfQuV8Chn0X6r1dQoxgzUhZlgcYdAoWGJsBJXTNvlbndzg8yGkOgKhP/ftID9hrlQ8zwnN77bCXn0WzUtjsUXJVKG79E4OT7ST4i9hWisbMPT1XtFfM/faQBeleaIOBYgd8Olq0QzDsG3KJrxUuFZYuxoASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9B2OJYeTHVVFXwyr4G24xPxvCnWCrgUZDOUs5FuNRFVt5vcF2NQv4UhncaFfdH5CfD1YKPKs3JZ1a2MTkrMENKwOaMK5kavQ3FzAuo7F1BXKP7eKg52sy60GeU4xMTetzn0rcDqNk8vpFL0dSSIvRCCiHhruXLjZCVYUhIw9UMxpMch11UFExMFS4Y78JEB4J65avoMVJPB+7DnZk5551O6uOUwJ1QvhsJ+EihMBAo6oXmdoVPhX3q0n+42qF2f4mLXwjdCj/Lmm8DVoOLLcY3yvnya5Ui+79ll+cMimzdz59UDaKkgL8b7eeGPoEDRDwChpYkDL7FHv0dd1LxJJyN0BdptNWSoWJ8yyjHkbiG1t+C40sR6BslaKkE3u7b5rvbgSuOcazOJSTCnh0UyHgpyF8SYTxFmCjyMULU4xP1iX0eve+erIbWOLQ6Mry4h8kgsW6FBtEV8s2jAaQjiFK3j86g73hIj2xDE2hliuX86iQBlhDj0ZpPNaJdBRWLxUb+mLwAmFbW95S12D9IbSUf6fATLaQlQttbhcLH3B1+4c32JwxR0pzbSBTeYnLcKG+yXimwfBlKWZq7GHhZv9DJ+hKsUOW2dU+3wD2eQsQUtgw1CSDaH757IwWFOka8uc1vUlqoL7NXFYl4KNBdCrBl2yZARXpBI79SKEy0RHycAFDFA0vx8v77pjCYX+/WgBvYUD9PezWtnYhH49LRroDQGAbMj/vRCJMrJ9cAtf5YFAt2Q=="
+}
+2025-09-07 10:49:03,520 INFO: 127.0.0.1 - - [07/Sep/2025 10:49:03] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:49:03,537 INFO: 127.0.0.1 - - [07/Sep/2025 10:49:03] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 10:49:05,872 INFO: Accessing checkout page with paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a
+2025-09-07 10:49:05,873 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-11_4933a5c6",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "countryCode": "PL"
+}
+2025-09-07 10:49:06,028 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T11:49:06+02:00",
+  "id": "CS53B66E78332FD5588D072D6",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-11_4933a5c6",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAuaiB+VWsZ35bni5DQKN4lsQ48aFVFdgD2B+3l4iDYPaawjHSCFJYXCqBiZbchV/m8oaQXAYp+JrVultVDwFZYLlVQD6UIU96wuWXyagBacbg1dkv4+YH1Al9Hq47w0M2sKzv5jMCI9oiqPxnYQjObiwIf+DXQb/ZIScYnVLKyhgdVjJ3K+BxROGfSVotYJL0V+D6idRZ/6YTWvQnb1/5SViF7XH4rX2ksoFqIVLC86c59eGlcRxw9CwH44Y3RlRtzL2S2pkGH0MH6wP3e47KeR1NcHFnjdAJapCFrn9ZoQHPwmfIHtj3SVMb3o41uVFaqmhni4q0xN+wDfrDJkGZ9XkLH/svN4zE6e/eIAq46MVXwROoypSVT5WE9S80hAkwns2X/q0Q82rr48vcSJjx6eqK2W13q2t1pfHroXaY7r1UK64DwkwtM5EtlEXw35lVYtWCL5S+7q3774OMaqW+hQA640+fe2Xb+bkZI0PemzU0St4AGQwjaKcX1x4JqcSHF1bevZjHjmH9GB3R9xmvsm+E16SoBy43eT+t9Ifo3AdOiCStMfjdviCBN7GZfgHUYmKhmOjYGZM8waqs/fowpIcf26DWd5wSsWq9+aVAk6UfMBfZsk6/2YFMgBO6v5UNcDzyvIkwjoacT4TVcfoIEMiLhb+AC5O2IGYaCq0BGMAz5FgJKmEEwZbSBGI8ASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9gXBoBMoNhQ/tve8evuNw1r9uIesCF4ra4qgTxa5y1sIdMFfe7RLqiXPwGKdFTBW3U0WGes3+8SAkFp0yrTX25U+eCoM+xKCMFCTauckyy+2FiSmvbdcxPgYVoteOZJFK715BlBke8yVHja0ruQy7w5UUWaddCdvc2Ab8323pkuRwlDFlMZhGmRWiqjJyWtSF0l4/9lfrSEHMtwk86azAZ+WAtTDxkJlU4LOS7pkIGa1yZZ5SDzpx7fNTIlt+Bz7iTjFkwY+71CiinSOOATKy9Riyy1YeGriDVV3Wd7q1+5zktavFCIx8cB6fPmyyTy/lrEGYPcZhlqsS6G4WRfx1cOg9VE+3zJi4JeYFwH42bExchwpLIBFrNHJv4KcdScXFhUf7vWpLT7ofGCQpkwLIBXAM71do3jZbtvgHpJ+vLQb1+xbyoV2JKAOmYhZgTqvC6/FzFZs1djINUjNFZ0Jyb4nHrJIBvUpMkbnqQO+6BW3ktdCevv8XnsU05jFTuR7zHQUbUfzTqxGtYENMm3TWMRKjYHl2cEi//g5pXy4bnY+ImPapzGL6UsJS6avhqDQVpQAuLsK+O67JJ7SHHNwPDr8wbhGWg9FRziUlnGfoa14SDgQxFsq5jngfNRd87ulMOhyKhQFN+BGXssgRDYog/yxDH2MD/ltUQpuPXZUZQx3efnBxlOj0Mx6OPTUKz0G8o8pvZM76zYvXpd1zkWr52QJwFowssh3j9lf28cfNtT003r4t"
+}
+2025-09-07 10:49:06,029 INFO: 127.0.0.1 - - [07/Sep/2025 10:49:06] "GET /checkout?paymentId=1d3dd539-81ab-47ba-be34-7c6adfb3b45a HTTP/1.1" 200 -
+2025-09-07 10:49:06,046 INFO: 127.0.0.1 - - [07/Sep/2025 10:49:06] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:09:47,798 INFO:  * Detected change in '/Users/luken/Desktop/paymentlink-sessions/app.py', reloading
+2025-09-07 11:09:47,819 INFO:  * Restarting with stat
+2025-09-07 11:09:48,139 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 11:09:48,139 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 11:09:48,139 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 11:09:48,141 INFO: Initializing Adyen client
+2025-09-07 11:09:48,145 INFO: Starting Flask application
+2025-09-07 11:09:48,153 WARNING:  * Debugger is active!
+2025-09-07 11:09:48,198 INFO:  * Debugger PIN: 940-524-855
+2025-09-07 11:16:59,723 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 11:16:59,724 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 11:16:59,724 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 11:16:59,725 INFO: Initializing Adyen client
+2025-09-07 11:16:59,733 INFO: Starting Flask application
+2025-09-07 11:17:34,748 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-07 11:17:34,749 INFO: [33mPress CTRL+C to quit[0m
+2025-09-07 11:17:34,751 INFO:  * Restarting with stat
+2025-09-07 11:17:35,060 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 11:17:35,060 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 11:17:35,060 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 11:17:35,062 INFO: Initializing Adyen client
+2025-09-07 11:17:35,066 INFO: Starting Flask application
+2025-09-07 11:17:35,073 WARNING:  * Debugger is active!
+2025-09-07 11:17:35,117 INFO:  * Debugger PIN: 940-524-855
+2025-09-07 11:17:36,278 INFO: 127.0.0.1 - - [07/Sep/2025 11:17:36] "GET /admin HTTP/1.1" 200 -
+2025-09-07 11:21:39,147 INFO: 127.0.0.1 - - [07/Sep/2025 11:21:39] "GET /admin HTTP/1.1" 200 -
+2025-09-07 11:21:41,581 INFO: Processing admin form submission
+2025-09-07 11:21:41,582 INFO: Creating payment record: ID=b3ac3a62-2877-4f61-890d-b9010517fee0 Amount=7600 Currency=PLN Reference=test-1 Country=PL
+2025-09-07 11:21:41,585 INFO: 127.0.0.1 - - [07/Sep/2025 11:21:41] "[31m[1mPOST /admin HTTP/1.1[0m" 400 -
+2025-09-07 11:21:44,274 INFO: 127.0.0.1 - - [07/Sep/2025 11:21:44] "GET /admin HTTP/1.1" 200 -
+2025-09-07 11:21:47,309 INFO: Processing admin form submission
+2025-09-07 11:21:47,311 INFO: Creating payment record: ID=c2337d09-354b-4fad-99a5-7c1eea37c02d Amount=7600 Currency=PLN Reference=test-1238 Country=PL
+2025-09-07 11:21:47,313 INFO: Generated checkout URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com/checkout?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d
+2025-09-07 11:21:47,313 INFO: 127.0.0.1 - - [07/Sep/2025 11:21:47] "POST /admin HTTP/1.1" 200 -
+2025-09-07 11:22:14,038 INFO: Accessing checkout page with paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d
+2025-09-07 11:22:14,043 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-1238_7cd781e2",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d",
+  "countryCode": "PL"
+}
+2025-09-07 11:22:14,252 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:22:14+02:00",
+  "id": "CS12E491C3FB49821BC3DF25B",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1238_7cd781e2",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgAdldTIh+PmGnRJ8WMVgfNmxppg2EprLC8T6oJGNazyOXVnHg5kSPOf/RxWlFKDL3dPHTmLRqFlaWcYunHVnsTOBXVGX8MQT6gskyKnIC2/u//AlOa047xNJmkJV/p31tj0BtBOJ8nlUWB4AhUwefMP0G0hFtI0FC4O/F7Xd7kckDrXRzmIUueaLsov4XMGNL7z1rZL3uRpoJbywzFpYQLsMPs1ERMsj5gJAoR8rkh1W9+kCH60sw+A/fWfXQ+phrn9eJx997Bi9CUvQ+YhobBFL95DPSEXwvylURCNdregwoJ77HI0h2505aMegUdmtgGjhnqjezy6IkBYXFRTYL9JL//yRTl55pzP6y/wfcFrPitc21aRPL36mAVfYz2/mohzRi2vxHQ3TF6IgNXjtXgUzG1ZHIe/5GvyNhWC10lPIZmEEfhEmpnHYrVl/R0QNIryqyrnGnVzIo3sOY10EwgpfZ/sZD9snILetGZ1XjzEWPAHB1nK6MRneDoYcXNpRyalXwRniMQx5AK0B77sN1akGD98gZ8Eu+H9r7QfSWSBxSzBRuah4qj8cdMak0gbbMIdpP+mkf2GhJ6QreX9sC5kn367tF17nqqhgfqF501fjmd4rASkj8FJ+9TT+v0SMmOXJsbfMNrBjnj53PUn3kyGWKZCH4hALdSKzRo7aJRSlgx3Rqdck8ZDsmtw4BAASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ94yNPCPaj+PQUVCWGQrWQpJO6TqXj1eOTk/3dTi1YRq623h8w581VeUwuZIY5NBX3qyRu8T/G+uliTAismGWggiz6/sq95falQH4i/cbdSpvrorMVWejqpY4IhWYMZHMzUZ1M7T3nvKNT3vDFIgnce4ydw19Sask40Yhnt7WOhM1NvkX1y0X+2OsTH2Kk1ouuC+3mTP9/IuCWR1DNkaCo7XQ2IhwwoLAOeSYaJLUpM6J55isNo+KYq3Gj7nOoKoCuRNYS9ASazLMuvw9HmEeTb+K3cy4DZ1eR+E7CLJNQg65atVMiKUwjkXaxHHWh7FDsfC+qxm1dwt+2YzlSBDJHeBl08FTTWS0KryXxjAeGsGYT8QRkvj49C4YPXZS60AFQoZMGNczfi+agYPjVyQzYcXgPAFu3iFeR/dJAm943cknvqtpzVjpu2UGLwsYs50EurPFvpRSCV3smkW0XIuO5lZRpXkqdySCZHSuqgaJvovSwlxQgKN1P2dcqO36J82iE4X4Sfxk601KYFZVtwncv4X2Dd0rn4IMNfzGz6CusoklDA0IR9wzGRgDF8MI+zwrpvK+v4GiYbF9ChD7aUrCwQpH0zhfbqW9MnZI2FHF1ZGbeEHdPE6qJKjfHfsSinaEcDC7pyAN/2Ijd1ZrL/X25OPxc7+A/XlAurHxhaDNPH7NuJkvzTrEK+nAP2zN8/zOZY2rIKbW6Yds+nnhUHsqjxyd8q4QdaJcv4xm9NKmtxYowH/jwot7kS9c="
+}
+2025-09-07 11:22:14,258 INFO: 127.0.0.1 - - [07/Sep/2025 11:22:14] "GET /checkout?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d HTTP/1.1" 200 -
+2025-09-07 11:22:14,284 INFO: 127.0.0.1 - - [07/Sep/2025 11:22:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:22:28,555 INFO: Accessing checkout page with paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d
+2025-09-07 11:22:28,557 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 7600,
+    "currency": "PLN"
+  },
+  "reference": "test-1238_45f62e9e",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d",
+  "countryCode": "PL"
+}
+2025-09-07 11:22:28,737 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 7600
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:22:28+02:00",
+  "id": "CS88BE047256AA90C0F733295",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1238_45f62e9e",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCx74jkQCwcsr+lJJYNm3V+zzQrdchn0xCIVZpX1QfWLtfbMIXMSozc3QYIHy/tTVua5KN2AjEJuZTckK8EwEA0rB/kcitLaHG7bt6eGtG3iibGLZMthzdBpSn3+/cZrqaBObby4dUxuFJ+i4Mu4eipXePEw07ETkK8kwbMx5UouhyjQoY3LagKbFMqsAHEjyPcFjIIEBWVExyWCF1mRRj2XMboXRiRmQgCInIqvBuxgQxqDTk7u4HlG8XDHL7S01aQmZcxdZP34n3cR3sbVn029XOx/rd640jmu/imTytRKgVh40oG4/qtoMpWGbWEEk+A1/U6mo41IBY8SsWfFbSvNfWhOd9ptgjHWqRrF9660FqYwEKXPVNWd5evC60hl1oFK8Y1qWy86ErAh7pRdua9ndZCZkdB/Fg7ZqayyH6A7VuGwzRItQKoRMhSp+DC9/ix+A6zvWBczFNrHAKzNXFoM8EBgxo6do20himI9CFSZvW6ubDE60YERJY7JCMZxqT/4ABZt97YWcuvy0ZZ4cgPLcd3thMqJvLsLKQx38OA73wDG8SC6tx1FB22xhmf0Pi7+Q4UEb80QjZE2/KTDucgSac//mq4sxEAuBEGY9Dcd4fp79jc48wVlOAumrvC4WHVDT+h2a3QY8YTEnPWH8mG1k/o8ksd05BC/fxm4HbIBAw3FAV0sJyOnTz3RZsASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9uHEofzyAbtHwQMDzW1tB1kAOcGv/05pzNOkECX0rOdSXMlCXxz5DzRPfvvzoO8pe7b7tff+4EdR9WtPCGjFz0uNxChpmPA25KnnRRYb8ZQDh6a1h0BTQNHyYxOubzBAgtkST/w97zg5cNoSsCrgRL7Z5StJiDET3yEFn7cWvszEo4eyJtEBXEM9N+4sQRSNTveO4A2JZwuyveF0WvIroOjVYaxPrcx7ns0a2Do4HSFKQVU9RFZPUSuFdTCC/PSkknlCmH1vQMKWFoNH20HAcn1Ei8+ybph6Gwjf2PZp27RY0YIdcd7Cw4b6ecqBeq/kNLHhaKiTUW/RaSPZWamcxVBym4U0GePs+ElAmOhmFi9igUK+3tVOLZJf9offvfZBqMf1cTDZBeMhH4s81KVRXPaGrT+lK4DI44CE+FhV+oVv82jQpvr+rg+gJiY3P4MnT4iAAdbhRZVL/LnIsl06NElYFKZ6wNwZjipAlzWOiFJVdSIY01vglbA+ABYdBBhiip1E1UxBGQKzCn/lMz/KKAtjS30y5PqVBy7JFr+vo/6dFKSJ/UUM7HjHP+Waml+jiFLrmNNSu8t/XkDQcnKB5CIWjo1Zwx2chzoCS1FGH/uJGxGqKAx6OS2yv9JGNXzcYv+4m8NvCiEyqiLvGEDle6nrUwpOw0gxOYFQnSWv+uaZLpbtsnnZBbOXBLyY8dnFkeHiC32szsUDEBy40rGUGkL7cF4TAw3i6vLUIlIUYGBf+069ldSc="
+}
+2025-09-07 11:22:28,738 INFO: 127.0.0.1 - - [07/Sep/2025 11:22:28] "GET /checkout?paymentId=c2337d09-354b-4fad-99a5-7c1eea37c02d HTTP/1.1" 200 -
+2025-09-07 11:22:28,755 INFO: 127.0.0.1 - - [07/Sep/2025 11:22:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:22:59,774 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 11:22:59,775 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 11:22:59,775 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 11:22:59,776 INFO: Initializing Adyen client
+2025-09-07 11:22:59,780 INFO: Starting Flask application
+2025-09-07 11:23:34,795 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-07 11:23:34,796 INFO: [33mPress CTRL+C to quit[0m
+2025-09-07 11:23:34,799 INFO:  * Restarting with stat
+2025-09-07 11:23:35,050 INFO: BASE_URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com
+2025-09-07 11:23:35,051 INFO: Merchant Account: AdyenAccount223ECOM
+2025-09-07 11:23:35,051 INFO: PROCESSING_LOCK_SECONDS: 30
+2025-09-07 11:23:35,052 INFO: Initializing Adyen client
+2025-09-07 11:23:35,056 INFO: Starting Flask application
+2025-09-07 11:23:35,062 WARNING:  * Debugger is active!
+2025-09-07 11:23:35,109 INFO:  * Debugger PIN: 940-524-855
+2025-09-07 11:30:32,752 INFO: 127.0.0.1 - - [07/Sep/2025 11:30:32] "GET /admin HTTP/1.1" 200 -
+2025-09-07 11:30:53,876 INFO: Processing admin form submission
+2025-09-07 11:30:53,879 INFO: Creating payment record: ID=3b269f76-08d5-409d-a66b-d272dd924100 Amount=5500 Currency=PLN Reference=test-1239 Country=PL
+2025-09-07 11:30:53,882 INFO: Generated checkout URL: https://paymentlink-sessions-1704aa0b205e.herokuapp.com/checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:30:53,882 INFO: 127.0.0.1 - - [07/Sep/2025 11:30:53] "POST /admin HTTP/1.1" 200 -
+2025-09-07 11:31:16,076 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:31:16,078 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_7ba56180",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:31:16,269 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:31:16+02:00",
+  "id": "CS6155979E8BC4492FCA51277",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_7ba56180",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBqoWzwgS6a/TudDKulhdqOnGZYxvmLYGE0Zu84oSLNyv190JTB2DOOKcEDAcHGOkqN6tUb2lz35KeKtkCztr1O89WndiXjWKpEMZGiYnGS2pS1BnRQOtUYKlJkN15dcG6HVUnrkK6DSv+tYTZzwwBUA4tYKvjoJkgFAgNChN4Fs5CSN4NxpiJ16ocevtSoLNinRTIWrBOH0cNa9xJJIFDFnevjIpexND8yLrBRhHUYyoGydOMKAf5nm4EL5Ii4AqTLMRYdRmxNM9HJHIT/uQTCw8ZamGqdW5HWZ5FI+9fjD1ryW6SzkzrMFK4LgNC+kfDuqo+/ToIiHuoCMxRSy3mAu3YEyZTuCg0uh/2s+4dmezojiDWH3+IMq8Y9wwM3CDZYB6iH7rmIvyIjfHmF7CB6+XJo4QpF55Rv0i3mTxQi3ZE80w5apEOcOIKfxiheEkr4uHUMbRvxa6+/qRZZ2GguBPypBZuV+qTB4AgbzFIV15EJhoo0XoOpBn4XPdfWobtWS+KGkbznQTDwrvE+uI9Ea+YXpmdLOgYzuUgLkol7l7HrSorgsUZRpRoKJfp5MuGLjZiTQZx1eMAzRzqzjTHn3N1lU0i9rxG4u/BzCe8th20YSjhm9HBuUpo0j3/IN1bj1s4N8T4zMgB6YF6KJbMhRgEuTxGHoQNFuhOjJ29/CAxUu/NJ73NLo8zXGbIASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ92uo0OZCf6oaFxbNjGb2RoUXuwARX4S5uUSlrnG2ALr7kEpVZWpqYE/uhXUoEbiMbIlTgse/UN/ocbO9WDpr3PH7Bxgplj33OdXyqhKZPRWYUhkPU0o+sfgrpCYHzxLmYhan5dqxt6oN2z2aVBbWDRrSESV1kkdKJ+W9+wnLgMDQVixdSEtT6VyP8DY+jD6X+Ur3y/e/NKIrbT+93ZpcBIvm2g1ABNwAQYrF/MirsiDskoYaI4aTtfycLFuQAPxCZ54hgytcJGPNVqIOvp/eg1ancM6ldxg8KsjE33bs/YJEEzzh/cPwYYD4XNJ+at7v2jYsLD1pzN4UvkwbgPDFbzjxmr0TM+MwzlgnLVdPVl4LswjIcEor3sf+5biWh60M7sbEC2NvtPaDtoZHiWIZSqfR/xGXtdnEqBaqOjNKXkS4DQs7CK9wnW5TlyejoslgaDnBMd0897XjyWxwNm5e0MZAqfis6LLWLKg9gElECWthbe6nsWErQWCIbW5tTlqR7VG6radXa5dVAVAZ2Gd6ZaNCjgjs2G5Nz3xZGvpb7NUIqHmJsvNtwvNFf8PEfmcOHftcr7oYylb+JupXp7R2ymNgQvFgoXljDQwzRLrQn5tcOHoPQ8sTOTuYYNXvBKsGQVeaHwoO07InZc2OB99MXAjAfzkmM6xeu8rF8tINPUKA7f/LyjSowc5py6+7FAorqu0Y8FkV4pCCTJYkH8kdT5oH5heSwbKORS1WKoeL90kizThtzRA=="
+}
+2025-09-07 11:31:16,272 INFO: 127.0.0.1 - - [07/Sep/2025 11:31:16] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:31:16,289 INFO: 127.0.0.1 - - [07/Sep/2025 11:31:16] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:31:58,635 DEBUG: Scheduled auto-unlock in 30 seconds for paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:31:58,635 INFO: Marked processing via client event (paymentId=3b269f76-08d5-409d-a66b-d272dd924100)
+2025-09-07 11:31:58,635 INFO: 127.0.0.1 - - [07/Sep/2025 11:31:58] "POST /mark-processing HTTP/1.1" 200 -
+2025-09-07 11:31:58,641 INFO: Redirect to result page for paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:31:58,644 INFO: 127.0.0.1 - - [07/Sep/2025 11:31:58] "GET /result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:31:58,727 INFO: 127.0.0.1 - - [07/Sep/2025 11:31:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:32:07,551 INFO: Redirect to result page for paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:32:07,554 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:07] "GET /result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:32:07,569 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:32:11,837 INFO: Redirect to result page for paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:32:11,839 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:11] "GET /result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:32:11,851 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:32:14,967 INFO: Redirect to result page for paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:32:14,969 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:14] "GET /result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:32:14,980 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:32:16,254 INFO: Redirect to result page for paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:32:16,257 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:16] "GET /result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:32:16,268 INFO: 127.0.0.1 - - [07/Sep/2025 11:32:16] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:32:28,648 INFO: Auto-unlock → pending (paymentId=3b269f76-08d5-409d-a66b-d272dd924100)
+2025-09-07 11:33:05,847 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:05,850 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_dafafee4",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:06,077 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:06+02:00",
+  "id": "CSB7810F29FA803643A0E8208",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_dafafee4",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgBfJBqS4vhHHvusdigHqVd3+ItkvKJ0UWkzvS86ysas7WAh58TpEBvKS/7Od4iNb89H+r8orn3MU33rzqpqJvxjoyVsr/kbiv1MLq/Klp6f1+B1fcKpP91KsM9mOfBwlW8VeRQ6U0nRhH/JLOWn9HTxFWwpSxcHC9BJKOvLuxcZx1PocyMdJC29G/uE0P6ulOnRgKfh9A5Mbe3aG7FrJA09rw6OKTQabAa9hlcVf35+ePDeEl/VeSLEb8/qjfCDOBkghfl0Vp/biH8x3UwOQTK6sMpgSvxLWYEDbPCg31So3UVjyiXNhkSxpe5M+B7bZzODn655+4tTS4ucNXQa1gmTLC8AO/4n5QJ6phzu5hhOHFcOYY+nhT/ADg2Go/JNG0BvZVpWK+kd+7xpg4c8J7dNIZVIafJuouT+FaVs50Y+/wWXFMRBUMCZR6DCPPzwb23MKHuwOvJ2SYoOLebwr5TfX/WRq3FqKTZ/EROzDIe5P8VAquW/pNjjz9HjNppqmXbbf1MnRdg2AoTdpBHK9B3V7D0op20uUt/BPvTY2e8yCQBb+4KMMK493pQhnzfL5UmLR+zTkoFYiZOBER77dF3eP2w327ioTpookUknjiqfWvbRozYPfril8Kupqq+P1zzgyq6qQVkCcjPc8DDnHCSji6F7Fy+18cIZvkoWMthW1QwT2uaQgOfyk5ymiFMASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9eA0KhgEfumhHXjTwIuHn7tmSHXIebGmiuiX8ZRqq6bAjI5H+tZUDO1bke6IoDKJMb4gUtPESzIn0tzC5zy46yKcn/Xg+86pN5sGL5yK3qatFRqya9lGe4W2b/uHbwNNSsDE42v/Xw4oLFL0QwO0fdi15rDz+fVfdA0jxh1jAhBAnvzBWqI2byAQlrihZKZ8mJoL6QoN3vrz6TWXZ0K5Lyhxqg5dWZ3jQXnz+6Cqjbe+wiZ3cPC0Bi0XS/p9HgzvbyNjcumCOo9QLb8OxueofGHXGw8GReZ4z6GQ6NONppA7WVL1kLN7OlXCSMmJuYZU0aKVXokQQKFj0g5k58sekv2uKJPonRFujBuu5IgUKJsgjgZGQY+yuPrf17PzPeN/zxqPureEQAA4kf2P2wUfxjmd3yz4zwyLGlp4h9kz+a/t9OWQc/DnvK9Fne7CnxSoUvy2MXZAcND4tqmPh792hOFjBsNvDSr5hFgEZgpXyhsa/pLPQXYkPwq3T2X4RbpWDe/tyvryFjEiNbsmxQgPlVo0iCtp/eXHdy/7ZAlTDPsWC8EbiKwjRJc6n1Ao+fM179DJ2nxm9UgjyKBqXsOS8s0hSIJqbjvWWTBNx3DKGdUndQRpOHm6hM77HpWGaE7qNr3XuTiASbVDcI1Kn+RkOo1YaglFFVyMCff0bRrV6QV/FWwgHse7BCxPNymyq+PdBFBqjCuL1dT7rs7aAtkE1SIkr9ia6kLihO8o6uP9xTb5uIn93DPCx"
+}
+2025-09-07 11:33:06,078 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:06] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:06,130 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:06] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:33:14,794 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:14,796 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_d1f0be7d",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:14,906 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:14+02:00",
+  "id": "CS4A1FB1D9C1D8F13ED221241",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_d1f0be7d",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCortVxgUuHP9LdsvfywpaEYKPXbQB/KIJsz/oY14AyUvlBKraUQi3TzAVRqnJaZEd9qr/iBk0DbI+TQOo0RlDutIfxc8Rc+QdIz5K1a+rOCzzX7+O5CbUrcpsnXYny4lOsYPtQVt7vl9F3Mz3+TU0iUtUz7a2dfdohOChFA9Dhbf6VMLvS+gYB2PdpL5iMLxahaH2wg42HDDrHi3Myo19pTmIDMDC55Z5xtq6xU4law+BL+OSyXgH4ugo+DK+ig82DLwf4zRqumrkcPx0tuWcScYgMf7GKTCmfveh/ufuXNqG1SGRJl14HME6K6Djc7rp1DrkEkUUPnAtOFSNvxoFUlDSVAI6E8ep91PciUKQDGjrPrqjCAMDLQe92aaj2cJghtoivICqScbVwYr9jqfvsmaVjFLNs8t5upqKnF1G9BN/S4eQQ0oSmhGsIlzlkB6AmXI6B5Y233Jm4zyNRQfn/pWU5t6nhswThjmgQZaUq7RbBs8lvOraBWajaT0bnajhS5JzSm9EUmtwdaIcYvmT9lBnnxuCZL//wSX1TwPwQoW7s9JwHyT5+RrGfaWWcpZadcwfQRToCFf2PjH13ky+pyGz8AiR+W175MYWqYKpbj5yhRA6NzAuhT3u6wZleFTQvXtHWvpcKu4Qir/ukHbUtZmWbg0ESVvosJ9sE7o4Ingz57ZZ6FkY8ILKTSxwASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9d30LPhXymxEAwqUi/FHJAmeedekqPk8l+6L1OWJCt8IqrHyv5KExvRxIGICcT5OG3i4390F/LP4wg5icJGzUVUNX+YwlqLLZ3JqEhU5Q0HQvZnqHN9+z3DcHC6NE/iRFqPPDjdWXf+n1slouDHHwERgVk3nj8CeA3gJ0pSnxLKsbdc4h6AqqdU5L6q+Fzjq4K2Ql+REjY18TadCUvLWBCSuiTMjJdGisdFdDixHnHg32tsgyH6CWkRI0t/cd9h8T7GVZs1x4bbp0/eYwadgVjFXh6n9AdGjfSFNZ+D/DpBXI3cPcDB0mmPBSnbnPGChJfru5D3vE1v1r2GNQwF9fq41n2B9aySQUYy3Iii7yCLBaRm0RFZP3SxAMs0QN3AhvZHc2iQp4C4PXRgq4mACfVl75mspyqzj1OsmAfmn62SNs/ByGqlRK3cqly1pNwYhVHy29tolaS1fkDix+Uij8H9QL2h+kKJRa4yV7c+CmgDfYX1yZvQm39uglcB8g7rTTaDQcCdRYIV7drwXk+36cqisc2fCPGD+xbIOJC3AoK0RHl2YJBNkWXXtRXqeD3eohEF/eJOruqFraRqLgd60xJzjVkGBpW7EWWmbq8L760uBXXgRl12gusSD2WcIHJQRK7u2gKJxPKwl6ovXV65uwOW8qeDTiLyTv5uLq8pAm7NWOIozoMOri3kJRxTAlyWN9jkGmxtRuZNJuREqXGB+rw7sid5nuxXyW4hQa+dXcRJD8NyeKKg=="
+}
+2025-09-07 11:33:14,907 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:14] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:14,960 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:33:18,260 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:18,262 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_68415849",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:18,452 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:18+02:00",
+  "id": "CS56E89C09C3274DAF1D76266",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_68415849",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgANn7xJgjMOtO8qG9fCwm/uyKo19H+Y2B1BroH+OucSo4zRbiDka/w+OonVTEOK5EJz7RyeNC3n/4HsEB8ztoRDpcY1nSFQ24qJld2W285UvVcdBInZVF6+R8C9g/bL8CoTuOaAoug0D7oDBUQHPyla44YvUZc7vTFeccWbl3CHXOGADwBAVD9z727CxKDWvqQAjqOg3YmAMjPjk9OvWkao4Ggc+vjc7L5Hh/PSTT/dYCIDBtuJ45RR8wGuPL4uQ+bftqul/jJcgA1ndOMWnfYxnZ+iDnARkEYn8gA3m/AJCppaVMR0j5VMh/S4mS3gLB3ehFDy9YlRmSTJE/csbSUxniHtQPvaTgZbQTfkuFfJhopinxfEILs8gN7nyxG/hBpsiEd57fFYyg7K6t7emSParbu9HUeX1Dz6cnpiX6srphFa1fBlKpIV4AbcY2oLeXn55iatPSysIzhLSEIVCoUQY+5QB0Eeia2up4WQxGPw2ljMZ2cKwcLA0t0WDD07Nkfbu2i3GwIhD3+rwlM8mXhZRnBgfBIMjpSEbjOYXhCJ00a6/QiIUjSHbgMBRYKGobLojsz/l+VXEz8+lO0ANAqMsry37iRIk967BVQNw/VnRZIgdC4H1zpjAXmt4HVcTM2HbAw4oF2IBlMl0EfqiLOWOad72LpqIo1af5FEA5oAjgxMUmmVO8WNXDEqLKwASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9rDRxNpeNihi0TlMf3pBY0AHkEC4XhhpFBp3jjastoJc0niTs8lF0kKF+mcXF6xKG1B3hb2/fz/KuWqcLqMf4jyIf2VGLMKp7zpU9GfgJwRIBz0dQRbFkInHseo5ueXvfp3HGQdk9fpj+7PBPD15yZpZMNj0toS8RQ/uSpEcX+eBSR6PKEaeklzpxWuYQPUhZW8FJQCq4ATDNsriVRPD7CdtYWkcioOWQAg5MIxcOtxjBKiZgatnzBi5ceMR6uF7V2SxsxUkHOtGY7lQ/DQigKZ9Q9EqPrwLDf22ACXZtefiP7qq8PujA1Yegs0T8oi3b94yOQGV6IQBt/gWl20FIPkqx51y56ScxF3vqEzSdKhO0Ygsphe27yI8KTspqui8AI9ppWt2w1xEbeymShSiuJ/uzh+Ys5lmYJygrDCVFoX+6D3/6Hev61K+8okbVmBo4RBCrdNur5fWhzh5t2KOd/19VlPo7BKmN4jEG5ksIxtM1NCFAh9Hu882F7TbRUpW/bQYXb7lfsoss0UZStQLeV6wzFI/RwtI0fcZpo0J4FpAGG2BjI1gduXZeG693tiZX//2UoId+/z7C3zAk3IWxbjJfd9opjw9/BVtuz0MopwjfQ6xBmfTiCXR6IpqLcEi7AcmYzXfRZgk/WElQMGEHVLQ/2gtuJIki8f1AsHoZVK1kV43sOzoF8VtlH23xPkXgZTaE414/zthvLNbiKtAnkNwaAsRBUs9fsX4vzASr3lu2azefOj4="
+}
+2025-09-07 11:33:18,453 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:18] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:18,477 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:33:35,310 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:35,312 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_3aeff01d",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:35,506 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:35+02:00",
+  "id": "CS25E88BFE46146DD81B1C2BA",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_3aeff01d",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgB9yq7geaZsFsrrJ1V4G3KmFYj9WvQkUGV1g7+bN3W3wvc0Q6dT/qzv8Iz0dWb/w6MftmLxHRMS+8BQ87EEGJYUVkfThVEP+rFlX5VWGARlqMVL+kGOzPavbugXKni3E2Zez4g4TJDL2gGJJcvshFq1jIqN1jxLpGeOQJIJlM/7IMJA8OMajfRilSvPv9ntL2+wKQ8IbL85ZF3r+r+B5YBKKv3ktIBUeg04LvP1DZa5o3xaKM7p88syAvXBk86fbgGwL3CTDha/KuSpE9EbbB+Vh/RHRnD/vYybzhp0PB0tGSUNSYoiPSuInt42xH5LbA/JNIX0OpgB2rZq4dzZiNhnCwpYuwuLv2glFH3Cunlp7cYRpcBwnDSA1lrBXkXEGACXJqwpt1gDDFp/5K6ND7nEVUdW6/2tzd9s8vwmIeylAR9V+0UJwRd9aSDrjgO/0akTWS9eAn2lICf9mTfmzR9fz1q3ygTvt/TavngwXGUAUdRAjeDfptcO516Woq27Po17IUh9bCQ4OJaiGia/v88y+A8MWVbHXIs9Glav/mlEhLiHJVjwAQpj87KOQOI1aDyKQgW+haCWhuoKLoOGL3adhQjUgEV4U2xzDpnOr4pV1JwZKJKQ7WGonXGmz50qZIdzeWMy6Qrw6Q7SXLugOS73GDuvZyeXhsUqpTRLW7VGOQzw5bxb4d8H4FnzPkYASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9+BehxHAw2VVKgKecvp1cf36xurUoYEngExTsIlmxJjPBkw1ewhICTX9NgfCxY02EZEtjCX9Slh43R2VD2ghxzhjGq0YZB9hp36blsTIuYDV69aEqEZV+a1DkaEGfvp2qJtU22m6psPpjaBGRLXPUSgDOXJmql0Z45Hs8OTErEIoUkiCwqLzWrL0EMnjsFXelnQ4PK80vDyzmTWTbl5kAiLaa061Js7Wv/P73mQsE8wMxygQvE/zx2oSKfsfIKcIJaELBhDcNHXkmghz+ZMWuTLTQEjljctQExi/Z94XyUx+YIvuSEFI7pce86Q6O3KKSMhX1Is64/YMAmnXnSVyltOIyxo9IUj8VmAc7dInVSE/PGXAvv03GdFpKmYktnwn1awx9yIjd0q3fnRPMFJbwRbwdWU44AF91YUtugBa9fGbbL6//alaU6+v0mOvsLrodTojrJeomhQGnLG1iKhdEKwh9CfK/Y7PMbJ8CHQJV7Uhw00Dr6AUG2Xt1Yd6nnJ2t6ICILzzFGNhcv80oohDoJ2wFjnj/UqamWKbILgpEXt/eePT9N7IgPEfxSr6cpIiX3+ICWgc/OLEEl+2tpxDh637OpW0cAC3LnVvjpP6fbR7Q8rzKjXzejw6QeWKCd7UMBJs8Bzk/lT6eJohyC/cKE4SZb9f9BdOaxE5TpRql/Jewucn4vwGzRezxst8qW5I0mPH4ntNpXlI9ZTaebXTH6lwMnaiYYFzI7owxSmQEMv9B20CO8cA="
+}
+2025-09-07 11:33:35,507 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:35] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:35,537 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:33:38,446 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:38,447 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_4c26f3d2",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:38,607 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:38+02:00",
+  "id": "CSEF9294DB10EDDE11FA2824E",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_4c26f3d2",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCeAfInm512W7VLW9jFFlE5H4i3DCi80HknXUqgvd+mX2rQs9JzgE0imm8uxY35H7kmhh5XKv2cm1V8/dOpRwA98KniysVodOxxRDYp+Safq9nrJnhdowBtiRayNg8iczSBuEtME2V+w215pSxJVPX1tVDj+lUroKns/jFXAhVIppvyAGMT/H6aR+Mx3NioF74inisPs0pVK4e7GZBpkGump+LJl/0H1QLMLFDAC43o2h5yDd+Hpi7FxX1x6aE6X0ARwzzKWMzqJewUpwbRByyncGjtWLMEu0xhh+Wujg6M+ZbKassoKvu6iHhVNmH24z9n37nKpu2LNY6wJG2Kj7JXi1q+iQTt5paQj5zvLONxiknJ+Mnl3FrsIGbgdZRs4LTG2pre2iJXtcHHDJ551sXRdQg41lR89CEZpT9jnUWYMQjFDtadDubpV98C/QNAUb2bwM5mmvww5+TqLGRhXzFTjEE43MxW/GiCcgV/pcm64p2qMks4bSZdz557DY3HnRauYsN2eNBRV/NMcSF3hxcyLdss9WEmRZLUmhAYVvd09blveQcbiD5oHSqCn7ps9LmyhWpgBnWKOJ3qKGyiG1wN7pR4VfZvw71mDAh7CHVoXUR8dWY8Npqn8qTR8JDmBEwR7Mm+O5pSKOXa+PcScov5d/KLTpQi8cNFl4W0M4vtEAy6Bd9yBa4FXJOOyuQASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9JAgO7k2cvJ3jbXUKIZhKPTNdCqGaJgWfPqphsDvc9ymj1CQf7i0Cx6c4uXST50h8l9YCguFeS7UTjWVmn1Q+Ou/k06RZFqMbZk7G4STCnPgdohhywsmCBp1pU9svKW58W3zUpnS1VoTswivI/xM36jLwNqvMiRmT4PCiHbhQBPIQRr3ni/cOUe33wG14Jx47ri0qARvPYLCqWsFi5K7kiVeRNgaYM27vqEHXhDIfoQlxN17z+rFsrFwZkp79aa5tH+MifRfjPeNFPapzhaV4W99lezmq763AQGh0FRGWDeI4+2JtqBGxTbGMD9pyWLG81zw1+QgzJGb/RJzYFNfvTVSfEW7GGQlgC3WUwEaY2PWwwdTcGRbrGDUV/tV1J8X0il+1OzOiOSm/p8k3P06KyaA2xKYuWgbk/oqhgZw4Rli//DPvoc3a4Co94K9/j/9rdxRhXZ+Ap/DmV2GZdu2FauuISnTaZRwhjP7LrrgSEpwiIwIwTZtPRaMSW2HzLbtRcKtLcH335OXiO5u8C6Iu/2TiwoSH5Tozk/e3HWvLGA6NBUWqqzy7Es7Jx/sOx8viw+BGDTp4UU2ZU351kINWJRyV7JaMXRwNC5I+668Il/7KD0VXfN8mDLp51Xd9RhFkBs2P1alMGkh5DsSdhybqqaocNwJRzbqRJZIpwMMkLx0Ilf/YGIFZQscvYxzwzfAdWO601/cA/x/ZVBw7QKyisfcTOtsmcpnnY3yBhzURciM4cq0tlA=="
+}
+2025-09-07 11:33:38,609 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:38] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:38,636 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:38] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:33:42,471 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:42,473 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_e1801989",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:42,621 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:42+02:00",
+  "id": "CS051B46FB87C60225F49326A",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_e1801989",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgCQU2bCsa1Qf8/R1JFIC11EIlACnrtTI1Y1kNyLHzo1T/q3OG02TasfcZVnc6TLN1mH2EhNi1BZ+Hm2UTuE8lPmpPcJh0DbjVnAnb++rSCIJk4XKcRbvrkrI6eWz6B0ioYEOwGmkq1N/6SQKZJ5Rfc6B7LTfQwHAET21NV/Rtn58G/kx+USJdmKKR2U2W328w+oZmPmkqNkU2jvG+GzWffhz+w9q79s/ILDQA6TQHMj9EqQNgB+/ecs9oduKq17eLRaNhM55q/uBIWmrowF5ZFk+2a4SDIq/ADUhGwEveleggKvDrio6qOILP1uif+6XJON+V49CM1WOucqJzWqjEAKXqOJioH/sQGITJNmvcp0OB7bi8UAjKSrlcS0TFr0GtbjXuYJJU6XCtDPoifHOm5Q/ohTyGGZ6QVM0cn9inMNaHWNHPyLIBlug93oUmaBS7qMTg0F37NhbLzUUINfmiYUlmcdNLtsXOl0jWqvHW9+Ut1d/yAftZN8e7g9Hc377bhMfM3489AtOfv7joB4h+shwy+tCWaBNKvGYMR+mZUcKnoN8ggHreVMpB/jL/XcVcpAQYYTDI6Dw6PpwrUZeJlcHQu7SawFFlUsuuEkIZ7jXRlAOlOD/VtYoXZDxmnTphmeym05xQFjSj8sB8+yB/4KMBV6KbS3vOiTEgU9h3CgRQy5VXRzZ7VCkIXhN9oASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ9dfsPeGdUyPh42xBm7Mv+FR8ZmvaexKKlo2F9qOE7Y/VTnc0Laq97G0TNWeTepUKAJnmfAhac3rYTqV7syBS00ugw8aOf66nrTUIWOhvPlwZdtvcP9DxhugfiibvgjtvgrlTXFIzbtPObwxIYEX9vxgaHAkiZJhuNT9yQMqQJxg6tNY4jf42mHA50HuPiYL6I13dpNu/ST/0Q0I17yBEuEjCpr3t5YSE9PTMpePkRRUFung+VwdMgkJjDI2+OtukAYICMPlxTm0yNSDuCjVr0vwAx5Jx6WCX6+pfIGV3PABntYk+eyxX6f3N1cFFTFtQ0W92ABrTyNy57Jmudtwjp0dYyaGCnkc0OeTfkCzhubyvO4/nzrTAybJyMH9/5yCA1s1PE4ixveJ4Q310ujOnSPAV2DFeDqGcbFRxHfvzEOpZVxCGJvT5SUBn+6iPvV8CtwHrudE9ugbi0agNf0KYll3aYwUZvtkJr8KYMe+0S0brIb7kTAWlu6s2c1ekxYpXO7gIjx81ouXZsz576b5alSZ2YVvE/Ym5rCjuaN6AO4sdHz3BpVo8NnKKRZjBxASLtle950Uatlm1rx7/vFtyKPlojqnbNw+q3kfY32aHtsiOZdAJAWKkAL9iCCN6IMDPDZ9ql5YtWMHnKWPZZkGq4eY5nIpsuioulb4uPwwF1UMwCD7ot/mxLafFtO9CGLi1mk2h6qdk49hET1Ht5Q6ZUg71exz0N9NIEz6nUjBoJ4k7xv/OvR/XFHg=="
+}
+2025-09-07 11:33:42,623 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:42] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:42,661 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:42] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-09-07 11:33:45,774 INFO: Accessing checkout page with paymentId=3b269f76-08d5-409d-a66b-d272dd924100
+2025-09-07 11:33:45,776 DEBUG: Creating Adyen session with request: {
+  "amount": {
+    "value": 5500,
+    "currency": "PLN"
+  },
+  "reference": "test-1239_40962543",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "countryCode": "PL"
+}
+2025-09-07 11:33:45,936 DEBUG: Adyen session response: {
+  "amount": {
+    "currency": "PLN",
+    "value": 5500
+  },
+  "countryCode": "PL",
+  "expiresAt": "2025-09-07T12:33:45+02:00",
+  "id": "CS5EFF32861CFAB9DBD1F1265",
+  "merchantAccount": "AdyenAccount223ECOM",
+  "reference": "test-1239_40962543",
+  "returnUrl": "https://paymentlink-sessions-1704aa0b205e.herokuapp.com/result?paymentId=3b269f76-08d5-409d-a66b-d272dd924100",
+  "shopperLocale": "en-US",
+  "mode": "embedded",
+  "sessionData": "Ab02b4c0!BQABAgA+l9mbq76FpFwpnKQKA72i45VEdYf3v11nJu2ZcAvlOOZyKH8hBMM7dLDGmXszQkx5z3JTuK7mT7iTZHFb1AqWWL4JbhANNpztjCmstOqBmRwUzRNcsPW6VPt7iYbzcdkdTLOXytuyFqfg/vCcLkoa93oNNIIAw9kRGt3d9aP4AOZtll0ZTJV7sHaUwyTDjqo8MsgUnBs4ScYWD76cQ/hhdlqZMBRoYC0yYgzRnUQIKgPLS68aBcZkhj3qQx5OUo2JV8b2HkyzP4cmftUV9g6DSlJn5G24mCwMNRM2lyIUvUY5GI4M7xGgNyNE/2/gfbp0Wyfdw4wgzYs9oywR6EOdBlPCiY2s2ClD1sfC9Id8HegP0zZHhQXzILh5DuvIh67mGSt6UYHd6CW+VQ2GYk7xaZ1+w1f1APfyWKgvEtPAfWy/tFX9EtqxsSHAsAGKi3sHrcqyRzQFgTRx29eJ+1XRwjeWjd6Icsiq9beKNglUleo915gIJMxC5ar9fRsN8OExVHQU4za3HfScf9qeLJza8/Wc0pL9EidE304sP1kfoTfu/RmxAbEK+o4QGdBljKg8dDOyh7HGJ0dlUr7u4KxYn0uOkiO3vr9XjvnNT7Hxh9vwgBRrM2/Mvi6xPXIJYd+WMb8Tw1FjvC/wvpxq4ZyYp+2uf1LWJaIHwtOozugSYww4X4j6IHvS0RaA0LUASnsia2V5IjoiQUYwQUFBMTAzQ0E1MzdFQUVEODdDMjRERDUzOTA5QjgwQTc4QTkyM0UzODIzRDY4REFDQzk0QjlGRjgzMDVEQyJ911nb2VAjIsJf7UOjrk1mGL8wyOG2ADLrQ0F4FZMJzo7lSZ7jYkobTnu6zV5lOXhxN1g+e4DhTaG12IB607ViBDLLn4hHobv4We/OwWJ1PnqXDF2ngIDDXxk4/C5g0tvoYpsEj97CT62HDPqhDzt6yMIt62Ie1/uBBRqGt5uUixyQu3jMyYDK8tGin6OnXhvu8V0l7rAf6akql8IWpdPGpLbPDqdjReuqiBVq06Tt4Z1N50z1HiUZCgZ3mibGVkLZ2PpsW02AIuzuxA+Njr5OOMC2PVPx7WkceGNC3ZA3RGYJWq8R0xdCwEhEhVm4yXONsebEM6kkp1yUupWcuMwpOhWPquD1OZco8beeERXANf4VikqhSCyRvFYKkCWPjDqmRW8U3fFI1fXAUPJniEyEL3kdQGFZIiDWi78cFuzrH1rkjqUIIJkS+Kd6eP8aWMzDb3fUo5Xkbgjwd0kPjLAy4aXYVUYtGQ2WD3rhC5v9H3zfj8KdRXNWnIdeI9o8C5XWWp4lYydX1De0eI1/Z0uyKdoIJUrWouSC42I0PoKbMvail0LMo4DyLc7XpHA0EBmp00XpmNhnVIawz+SKM8lQUpoo3/KBT0E+A78DdRnpFvWTCU5XPieVam8rvxLuH3MxI8cdVmZpkNasHhk2tbLpAk3Y2Zpvn2+9UR80GMRe/O5ZhVIvBiTVWGZLQbINoZsSbpec9xTHbAgznnUPIdfhtZtJdUlWFy2L47+WnwL/QZKzBhW69FdE6MI="
+}
+2025-09-07 11:33:45,938 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:45] "GET /checkout?paymentId=3b269f76-08d5-409d-a66b-d272dd924100 HTTP/1.1" 200 -
+2025-09-07 11:33:45,971 INFO: 127.0.0.1 - - [07/Sep/2025 11:33:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -

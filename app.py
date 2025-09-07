@@ -197,7 +197,7 @@ def checkout_page():
             return render_template("message.html", message=f"Error creating session: {str(e)}"), 500
 
         # Render client with CLIENT_KEY + session info
-        return render_template("checkout.html", client_key=CLIENT_KEY, session_id=session_id, session_data=session_data)
+        return render_template("checkout.html", client_key=CLIENT_KEY, session_id=session_id, session_data=session_data, payment_id=payment_id,)
 
     except Exception as e:
         logger.exception("Error in checkout page")
@@ -254,6 +254,37 @@ def status_api():
 
     id_, _, _, reference, status, _, _ = payment
     return jsonify({"paymentId": id_, "reference": reference, "status": status})
+
+@app.route("/mark-processing", methods=["POST"])
+def mark_processing():
+    """
+    Called by the frontend when a payment finishes in-component (no redirect).
+    Sets status=processing and starts the auto-unlock timer, unless already paid/processing.
+    Body: { "paymentId": "<uuid>" }
+    """
+    try:
+        data = request.get_json(silent=True) or {}
+        payment_id = data.get("paymentId")
+        if not payment_id:
+            return jsonify({"error": "paymentId required"}), 400
+
+        row = get_payment_by_id(payment_id)
+        if not row:
+            return jsonify({"error": "not found"}), 404
+
+        _, _, _, _, status, _, _ = row
+        if status == "pending":
+            update_status_by_id(payment_id, "processing")
+            schedule_processing_unlock(payment_id)
+            logger.info("Marked processing via client event (paymentId=%s)", payment_id)
+            new_status = "processing"
+        else:
+            new_status = status  # leave as-is (processing/paid/etc.)
+
+        return jsonify({"status": new_status}), 200
+    except Exception as e:
+        logger.exception("mark-processing failed")
+        return jsonify({"error": str(e)}), 500
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
